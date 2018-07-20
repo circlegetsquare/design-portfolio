@@ -28,12 +28,12 @@ html {
  */
 
 ::-moz-selection {
-    background: #b3d4fc;
+    background: #5A96BA;
     text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
+    background: #5A96BA;
     text-shadow: none;
 }
 
@@ -99,7 +99,7 @@ textarea {
    ========================================================================== */
 
 /* These are fonts which are loaded in from the Google Web Fonts library. Customize this as needed to utilize different fonts */
-@import url('https://fonts.googleapis.com/css?family=Anton|Lato:300,400,700|Montserrat:300,400,500,600,700|Oswald:300,400,500,600,700|IBM+Plex+Mono:300,400,500,600,700|IBM+Plex+Sans:300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:200,300,400,500,600,700|IBM+Plex+Sans:200,300,400,500,600,700');
 
 * {
 	box-sizing: border-box;	
@@ -107,13 +107,39 @@ textarea {
 
 a, a:visited, a:active {
     text-decoration: none;
-    color: #222;
+    color: #F4F1D3;
     font-weight: 400;
 }
 
 a:hover {
-    color: #000;
     text-decoration: underline;
+}
+
+h1 {
+    font-size: 64px;
+    font-weight: 500;
+    line-height: 0;
+}
+
+h3 {
+    font-size: 36px;
+    font-weight: 200;
+    line-height: 1;
+    padding-bottom: 50px;
+}
+
+p {
+    font-weight: 200;
+    font-size: 22px;
+}
+
+header {
+    width: 100%;
+    display: flex;
+}
+
+nav {
+    margin: auto;
 }
 
 .menu:hover > a { 
@@ -124,21 +150,41 @@ a:hover {
 .menu:hover {
     border: solid 1px #50E3C2;
 }
+.container {
+    width:1280px;
+    margin: auto;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: #F4F1D3;
+}
+
+.nav-container {
+    width: 800px;
+    padding-top: 50px;
+    display: inline-flex;
+}
+
+.main {
+    width: 800px;
+    margin: auto;
+    padding-top:100px;
+}
+
+.nav-item {
+    display: inline-flex;
+    margin: 0px 30px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 18px;
+    font-weight: 200;
+    text-transform: uppercase;
+    color: #F4F1D3;
+}
 
 .content {
-    margin: auto;
-    font-family: 'Lato', sans-serif;
     font-weight: 300;
     font-size: 18px;
     width: 650px;
 }
 
-.main {
-    border: 1px solid #666666;
-    background-color: #C6CBDB;
-    padding: 20px;
-    margin-top: 15px;
-}
 
 .flex {
     display: flex;
@@ -153,8 +199,8 @@ a:hover {
 }
 
 .logo {
-    height: 52px;
-    margin: 4px 15px 0 20px;
+    padding: 20px 0px 0px 20px;
+    width: 240px;
 }
 
 .scale {
