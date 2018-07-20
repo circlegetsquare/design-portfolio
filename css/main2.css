@@ -119,6 +119,7 @@ h1 {
     font-size: 64px;
     font-weight: 500;
     line-height: 0;
+    position: relative;
 }
 
 h3 {
@@ -126,6 +127,7 @@ h3 {
     font-weight: 200;
     line-height: 1;
     padding-bottom: 50px;
+    position: relative;
 }
 
 p {
@@ -140,6 +142,7 @@ header {
 
 nav {
     margin: auto;
+    position: relative;
 }
 
 .menu:hover > a { 
@@ -163,14 +166,7 @@ nav {
     display: inline-flex;
 }
 
-.main {
-    width: 800px;
-    margin: auto;
-    padding-top:100px;
-}
-
 .nav-item {
-    display: inline-flex;
     margin: 0px 30px;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 18px;
@@ -179,10 +175,19 @@ nav {
     color: #F4F1D3;
 }
 
+.top {
+    height:100vh;
+}
+
+.main {
+    width: 800px;
+    margin: auto;
+    padding-top:100px;
+}
+
 .content {
-    font-weight: 300;
-    font-size: 18px;
-    width: 650px;
+    width: 100%;
+    background-color: #222;
 }
 
 
@@ -201,6 +206,7 @@ nav {
 .logo {
     padding: 20px 0px 0px 20px;
     width: 240px;
+    position: relative;
 }
 
 .scale {
