@@ -138,10 +138,26 @@ p {
 header {
     width: 100%;
     display: flex;
+    position: fixed;
+    background-color: #7D8395;
+    z-index: 1;
+}
+
+.is-scrolled {
+    transition: background-color 0.35s ease;
+    background-color: #222;
+    opacity: .95;
+}
+
+.unscrolled {
+    transition: background-color 0.35s ease;
+    background-color: #7D8395;
 }
 
 nav {
+    width: 800px;
     margin: auto;
+    margin-top: 75px;
     position: relative;
 }
 
@@ -153,6 +169,7 @@ nav {
 .menu:hover {
     border: solid 1px #50E3C2;
 }
+
 .container {
     width:1280px;
     margin: auto;
@@ -161,18 +178,20 @@ nav {
 }
 
 .nav-container {
-    width: 800px;
-    padding-top: 50px;
+    width: 1280px;
+    height: 120px;
     display: inline-flex;
+    margin: auto;
 }
 
 .nav-item {
-    margin: 0px 30px;
+    margin: 0px 75px 0px 0px;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 18px;
     font-weight: 200;
     text-transform: uppercase;
     color: #F4F1D3;
+    position: relative;
 }
 
 .top {
@@ -182,7 +201,7 @@ nav {
 .main {
     width: 800px;
     margin: auto;
-    padding-top:100px;
+    padding-top:200px;
 }
 
 .content {
@@ -206,7 +225,21 @@ nav {
 .logo {
     padding: 20px 0px 0px 20px;
     width: 240px;
-    position: relative;
+    float: left;
+    position: absolute;
+}
+
+.svg-logo {
+    float: left;
+    position: absolute;
+}
+
+.scroller {
+    width: 51px;
+    height: auto;
+    margin: auto;
+    margin-top: 50px;
+    cursor:pointer;
 }
 
 .scale {

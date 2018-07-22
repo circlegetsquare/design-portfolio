@@ -24,59 +24,116 @@
   <![endif]-->
 
   <!-- Add your site or application content here -->
-
-  <div class="container top" id="top-section">
-		<header>
-			<div class="logo" id="logo-div">
-				<svg width="112px" height="75px" viewBox="0 0 112 75" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-					<g id="JM-Logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">							
-						<g id="Group" fill-rule="nonzero" stroke="#F4F1D3">
-							<path d="M0.5,50.5 L0.5,74.5 L24.5,74.5 L24.5,50.5 L0.5,50.5 Z" id="LogoRect1"></path>
-							<path d="M29.5,0.5 L29.5,74.5 L53.5,74.5 L53.5,0.5 L29.5,0.5 Z" id="LogoRect2"></path>
-							<path d="M58.5,0.5 L58.5,49.5 L82.5,49.5 L82.5,0.5 L58.5,0.5 Z" id="LogoRect3"></path>
-							<path d="M87.5,0.5 L87.5,74.5 L111.5,74.5 L111.5,0.5 L87.5,0.5 Z" id="LogoRect4"></path>
-						</g>
+  <header id="top-nav">
+	<div class="nav-container">
+		<div class="logo" id="logo-div1">
+			<svg class="svg-logo" id="JM-Logo1" width="112px" height="75px" viewBox="0 0 112 75" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">							
+					<g id="Rect1" fill-rule="nonzero" stroke="#F4F1D3">
+						<path d="M58.5,50.5 L58.5,74.5 L82.5,74.5 L82.5,50.5 L58.5,50.5 Z" id="LogoRect1" ></path>
 					</g>
-				</svg>
-			</div>
+				</g>
+			</svg>
+		</div>
 
-			<div class="nav-container">
-				<nav id="nav-menu">
-					<a class="nav-item" href="#">Work</a>
-					<a class="nav-item" href="#">Info</a>
-					<a class="nav-item" href="#">Resume</a>
-				</nav>	
-			</div>
+		<div class="logo" id="logo-div2">
+			<svg class="svg-logo" id="JM-Logo2" width="112px" height="75px" viewBox="0 0 112 75" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">							
+					<g id="Rect2" fill-rule="nonzero" stroke="#F4F1D3">
+						<path d="M29.5,0.5 L29.5,74.5 L53.5,74.5 L53.5,0.5 L29.5,0.5 Z" id="LogoRect2"></path>
+					</g>
+				</g>
+			</svg>
+		</div>
 
-		</header>
-		<div class="main">
-			<h1 id="name-title">Josh Miller</h1>
-			<h3 id="title-title">User Experience & Interaction Designer</h3>
-			<div id="top-content"><p>Hello-hello, I’m a UX designer with a background in code, data, and UI. I’ve been building things for most of my life—woodworking, carpentry, making noise, and websites—and attending Designation gave me opportunities to focus my career in UX and lead teams of designers. I’m fascinated by the intersections of people, technology, and environments, and I’m looking for opportunities to solve vital problems at a design-focused company.</p>
-				<p>When I’m not in front of my screen, I spend my time gardening, traveling, taking photos, and hanging out in Chicago with my trusty canine companion, B.A. Baracus.</p>
-			</div>
-			<button id="test-scroll">
-				Click me to scroll
-			</button>
+		<div class="logo" id="logo-div3">
+			<svg class="svg-logo" id="JM-Logo3" width="112px" height="75px" viewBox="0 0 112 75" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">							
+					<g id="Rect3" fill-rule="nonzero" stroke="#F4F1D3">
+						<path d="M58.5,0.5 L58.5,50.5 L82.5,50.5 L82.5,0.5 L58.5,0.5 Z" id="LogoRect3"></path>
+					</g>
+				</g>
+			</svg>
+		</div>
 
+		<div class="logo" id="logo-div4">
+			<svg class="svg-logo" id="JM-Logo4" width="112px" height="75px" viewBox="0 0 112 75" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">							
+					<g id="Rect4" fill-rule="nonzero" stroke="#F4F1D3">
+						<path d="M87.5,0.5 L87.5,74.5 L111.5,74.5 L111.5,0.5 L87.5,0.5 Z" id="LogoRect4"></path>
+					</g>
+				</g>
+			</svg>
+		</div>
+
+		<nav id="nav-menu">
+			<a class="nav-item" href="#" id="nav-1">Work</a>
+			<a class="nav-item" href="#" id="nav-2">Info</a>
+			<a class="nav-item" href="#" id="nav-3">Resume</a>
+		</nav>
+
+	</div>
+
+</header>
+
+<div class="container top" id="top-section">
+	
+	<div class="main">
+		<h1 id="name-title">Josh Miller</h1>
+		<h3 id="title-title">User Experience & Interaction Designer</h3>
+		<div id="trigger1"></div>
+		<div id="top-content"><p>Hello-hello, I’m a UX designer with a background in code, data, and UI. I’ve been building things for most of my life—woodworking, carpentry, making noise, and websites—and attending Designation gave me opportunities to focus my career in UX and lead teams of designers. I’m fascinated by the intersections of people, technology, and environments, and I’m looking for opportunities to solve vital problems at a design-focused company.</p>
+			<p>When I’m not in front of my screen, I spend my time gardening, traveling, taking photos, and hanging out in Chicago with my trusty canine companion, B.A. Baracus.</p>
 		</div>
 	</div>
-	<div class="container content" id="section2">
-			<div class="main">
-					<h1>Josh Miller</h1>
-					<h3>User Experience & Interaction Designer</h3>
-					<div><p>Hello-hello, I’m a UX designer with a background in code, data, and UI. I’ve been building things for most of my life—woodworking, carpentry, making noise, and websites—and attending Designation gave me opportunities to focus my career in UX and lead teams of designers. I’m fascinated by the intersections of people, technology, and environments, and I’m looking for opportunities to solve vital problems at a design-focused company.</p>
-						<p>When I’m not in front of my screen, I spend my time gardening, traveling, taking photos, and hanging out in Chicago with my trusty canine companion, B.A. Baracus.</p></div>
-			</div>		
+	<div class="scroller" id="top-scroller">
+		<svg width="51px" height="46px" viewBox="0 0 51 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+			<desc>Created with Sketch.</desc>
+			<defs></defs>
+			<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+				<g transform="translate(-610.000000, -937.000000)" fill="#F4F1D3" fill-rule="nonzero">
+					<g id="scroll-arrow" transform="translate(610.000000, 937.000000)">
+						<rect id="line4" transform="translate(37.727922, 32.727922) rotate(-45.000000) translate(-37.727922, -32.727922) " x="20.2279221" y="32.2279221" width="35" height="1"></rect>
+						<rect id="line3" transform="translate(13.727922, 32.727922) rotate(45.000000) translate(-13.727922, -32.727922) " x="-3.77207794" y="32.2279221" width="35" height="1"></rect>
+						<rect id="line2" transform="translate(37.000000, 12.727922) rotate(-45.000000) translate(-37.000000, -12.727922) " x="19.5" y="12.2279221" width="35" height="1"></rect>
+						<rect id="line1" transform="translate(13.000000, 12.727922) rotate(45.000000) translate(-13.000000, -12.727922) " x="-4.5" y="12.2279221" width="35" height="1"></rect>
+					</g>
+				</g>
+			</g>
+		</svg>
 	</div>
+	
+
+</div>
+
+<div class="container content">
+		<div class="main">
+				<h1 id="section2">Josh Miller</h1>
+				<h3>User Experience & Interaction Designer</h3>
+				<div><p>Hello-hello, I’m a UX designer with a background in code, data, and UI. I’ve been building things for most of my life—woodworking, carpentry, making noise, and websites—and attending Designation gave me opportunities to focus my career in UX and lead teams of designers. I’m fascinated by the intersections of people, technology, and environments, and I’m looking for opportunities to solve vital problems at a design-focused company.</p>
+					<p>When I’m not in front of my screen, I spend my time gardening, traveling, taking photos, and hanging out in Chicago with my trusty canine companion, B.A. Baracus.</p>
+				</div>
+				<div><p>Hello-hello, I’m a UX designer with a background in code, data, and UI. I’ve been building things for most of my life—woodworking, carpentry, making noise, and websites—and attending Designation gave me opportunities to focus my career in UX and lead teams of designers. I’m fascinated by the intersections of people, technology, and environments, and I’m looking for opportunities to solve vital problems at a design-focused company.</p>
+					<p>When I’m not in front of my screen, I spend my time gardening, traveling, taking photos, and hanging out in Chicago with my trusty canine companion, B.A. Baracus.</p>
+				</div>
+				<div><p>Hello-hello, I’m a UX designer with a background in code, data, and UI. I’ve been building things for most of my life—woodworking, carpentry, making noise, and websites—and attending Designation gave me opportunities to focus my career in UX and lead teams of designers. I’m fascinated by the intersections of people, technology, and environments, and I’m looking for opportunities to solve vital problems at a design-focused company.</p>
+					<p>When I’m not in front of my screen, I spend my time gardening, traveling, taking photos, and hanging out in Chicago with my trusty canine companion, B.A. Baracus.</p>
+				</div>
+		</div>		
+</div>
 
   
-  <script src="js/vendor/modernizr-3.6.0.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
+<script src="js/vendor/modernizr-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/plugins/ScrollToPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
@@ -87,3 +144,4 @@
 </body>
 
 </html>
+
