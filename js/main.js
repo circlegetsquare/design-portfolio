@@ -1,16 +1,16 @@
 // Inital page load animations and 
 window.onload = function(){
     TweenMax.from("#logo-div1", 2, {ease: Power3.easeOut, opacity:0, delay:.5});
-    TweenMax.staggerFrom(["#logo-div2", "#logo-div3", "#logo-div4"], 1, {ease: Power3.easeOut, top:-15,opacity:0, delay:2.5}, .175);
+    TweenMax.staggerFrom(["#logo-div2", "#logo-div3", "#logo-div4"], 1, {ease: Power3.easeOut, top:-15,opacity:0, delay:2.5}, .2);
     TweenMax.to("#logo-div1", 1, {ease: Back.easeInOut.config(1), x:-58, delay:6});
     TweenMax.staggerFrom(["#name-title", "#title-title"], 1, {ease: Power3.easeOut, top:25, opacity:0, delay:4}, .3);
-    TweenMax.staggerFrom(["#nav-1", "#nav-2", "#nav-3", ], 1, {ease: Power3.easeOut, bottom:15, opacity:0, delay:4.75}, .2);
+    TweenMax.staggerFrom(["#nav-1", "#nav-2", "#nav-3", ], 1, {ease: Power3.easeOut, bottom:15, opacity:0, delay:4.65}, .1);
     TweenMax.from(["#top-content", "#top-scroller"], 1.25, {ease: Power3.easeOut, opacity:0, delay:4.75});
    
     var scrollTarget = document.getElementById("top-scroller");
 
     scrollTarget.onclick = function() {
-        TweenMax.to(window, 1.25, {scrollTo:{y:"#section2", offsetY:160}, ease:Power2.easeInOut});
+        TweenMax.to(window, 1.25, {scrollTo:{y:"#section2", offsetY:195}, ease:Power2.easeInOut});
     }
 }
 

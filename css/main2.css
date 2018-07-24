@@ -122,6 +122,13 @@ h1 {
     position: relative;
 }
 
+h2 {
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 0;
+    position: relative;
+}
+
 h3 {
     font-size: 36px;
     font-weight: 200;
@@ -175,6 +182,7 @@ nav {
     margin: auto;
     font-family: 'IBM Plex Sans', sans-serif;
     color: #F4F1D3;
+    min-height:100vh;
 }
 
 .nav-container {
@@ -194,24 +202,68 @@ nav {
     position: relative;
 }
 
-.top {
-    height:100vh;
-}
-
 .main {
     width: 800px;
     margin: auto;
-    padding-top:200px;
+    padding:150px 0px 50px;
 }
 
 .content {
     width: 100%;
+}
+
+.content-item {
+    width: 100%;
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.darkgray {
     background-color: #222;
+}
+
+.blue {
+    background-color: #5A96BA
+}
+
+.green {
+    background-color: #55908C;
+}
+
+.yellow {
+    background-color: #BBAA58;
+}
+
+.mint {
+    background-color: #83C7B7;
+}
+
+.orange {
+    background-color: #DD8348;
 }
 
 
 .flex {
     display: flex;
+}
+
+.placeholder {
+    border: solid 1px;
+    height: 375px;
+    width: 375px;
+}
+
+.placeholder2 {
+    border: solid 1px;
+    height: 250px;
+    width: 375px;
+    align-self: center;
+}
+
+.size-200 {
+    height: 200px;
+    width: 200px;
 }
 
 .justify-end {
