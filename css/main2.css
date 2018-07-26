@@ -133,7 +133,6 @@ h3 {
     font-size: 36px;
     font-weight: 200;
     line-height: 1;
-    padding-bottom: 50px;
     position: relative;
 }
 
@@ -148,24 +147,54 @@ header {
     position: fixed;
     background-color: #7D8395;
     z-index: 1;
+    opacity: .95;
 }
 
-.is-scrolled {
+.darkgray-header {
     transition: background-color 0.35s ease;
     background-color: #222;
     opacity: .95;
 }
 
-.unscrolled {
+.blue-header {
     transition: background-color 0.35s ease;
-    background-color: #7D8395;
+    background-color: #5A96BA;
+    opacity: .95;
 }
+
+.green-header {
+    transition: background-color 0.35s ease;
+    background-color: #55908C;
+    opacity: .95;
+}
+
+.yellow-header {
+    transition: background-color 0.35s ease;
+    background-color: #BBAA58;
+    opacity: .95;
+}
+
+.mint-header {
+    transition: background-color 0.35s ease;
+    background-color: #83C7B7;
+    opacity: .95;
+}
+
+.orange-header {
+    transition: background-color 0.35s ease;
+    background-color: #DD8348;
+    opacity: .95;
+}
+
 
 nav {
     width: 800px;
     margin: auto;
     margin-top: 75px;
     position: relative;
+}
+#top-nav {
+    transition: background-color 0.35s ease; 
 }
 
 .menu:hover > a { 
