@@ -10,7 +10,7 @@ window.onload = function(){
     var scrollTarget = document.getElementById("top-scroller");
 
     scrollTarget.onclick = function() {
-        TweenMax.to(window, 1.25, {scrollTo:{y:"#section2", offsetY:195}, ease:Power2.easeInOut});
+        TweenMax.to(window, 1.25, {scrollTo:{y:"#section2", offsetY:245}, ease:Power2.easeInOut});
     }
 }
 
@@ -26,7 +26,7 @@ function myFunction() {
 
 var controller = new ScrollMagic.Controller();
 
-var scene =new ScrollMagic.Scene({duration: 100, offset:40})
+var scene =new ScrollMagic.Scene({duration: 200, offset:40})
     .setTween("#top-scroller", {opacity: 0})
     .addTo(controller);
 
@@ -41,55 +41,55 @@ var scene =new ScrollMagic.Scene({duration: 100, offset:40})
 var scene = new ScrollMagic.Scene({
         triggerElement: "#trigger1"
     })
-    .triggerHook(.15)
+    .triggerHook(.1)
     .removeClassToggle(true) //remove class toggle
     .setClassToggle("#top-nav", "darkgray-header") // add class toggle
-    .addIndicators({name: "1"}) // add indicators (requires plugin)
+    //.addIndicators({name: "1"}) // add indicators (requires plugin)
     .addTo(controller);
 
 var scene = new ScrollMagic.Scene({
         triggerElement: "#trigger2"
     })
-    .triggerHook(.15)
+    .triggerHook(.1)
     .removeClassToggle(true) //remove class toggle
     .setClassToggle("#top-nav", "blue-header") // add class toggle
-    .addIndicators({name: "2"}) // add indicators (requires plugin)
+    //.addIndicators({name: "2"}) // add indicators (requires plugin)
     .addTo(controller);
 
 var scene = new ScrollMagic.Scene({
         triggerElement: "#trigger3"
     })
-    .triggerHook(.15)
+    .triggerHook(.1)
     .removeClassToggle(true) //remove class toggle
     .setClassToggle("#top-nav", "green-header") // add class toggle
-    .addIndicators({name: "3"}) // add indicators (requires plugin)
+    //.addIndicators({name: "3"}) // add indicators (requires plugin)
     .addTo(controller);
 
 var scene = new ScrollMagic.Scene({
         triggerElement: "#trigger4"
     })
-    .triggerHook(.15)
+    .triggerHook(.1)
     .removeClassToggle(true) //remove class toggle
     .setClassToggle("#top-nav", "yellow-header") // add class toggle
-    .addIndicators({name: "4"}) // add indicators (requires plugin)
+    //.addIndicators({name: "4"}) // add indicators (requires plugin)
     .addTo(controller);
 
 var scene = new ScrollMagic.Scene({
         triggerElement: "#trigger5"
     })
-    .triggerHook(.15)
+    .triggerHook(.1)
     .removeClassToggle(true) //remove class toggle
     .setClassToggle("#top-nav", "mint-header") // add class toggle
-    .addIndicators({name: "5"}) // add indicators (requires plugin)
+    //.addIndicators({name: "5"}) // add indicators (requires plugin)
     .addTo(controller);
 
 var scene = new ScrollMagic.Scene({
         triggerElement: "#trigger6"
     })
-    .triggerHook(.15)
+    .triggerHook(.1)
     .removeClassToggle(true) //remove class toggle
     .setClassToggle("#top-nav", "orange-header") // add class toggle
-    .addIndicators({name: "6"}) // add indicators (requires plugin)
+    //.addIndicators({name: "6"}) // add indicators (requires plugin)
     .addTo(controller);
     
 

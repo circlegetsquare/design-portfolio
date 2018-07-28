@@ -107,7 +107,7 @@ textarea {
 
 a, a:visited, a:active {
     text-decoration: none;
-    color: #F4F1D3;
+    color: #FFF;
     font-weight: 400;
 }
 
@@ -148,6 +148,13 @@ header {
     background-color: #7D8395;
     z-index: 1;
     opacity: .95;
+    color: #FFF;
+}
+
+.white-header {
+    transition: background-color 0.35s ease;
+    background-color: #FFF;
+    opacity: .95;
 }
 
 .darkgray-header {
@@ -186,6 +193,11 @@ header {
     opacity: .95;
 }
 
+.hero {
+    width: 800px;
+    height: 400px;
+    background-color: #FFF;
+}
 
 nav {
     width: 800px;
@@ -210,8 +222,12 @@ nav {
     width:1280px;
     margin: auto;
     font-family: 'IBM Plex Sans', sans-serif;
-    color: #F4F1D3;
+    color: #FFF;
     min-height:100vh;
+}
+
+.case {
+   color: #7D8395;
 }
 
 .nav-container {
@@ -221,20 +237,32 @@ nav {
     margin: auto;
 }
 
+.nav-menu {
+    display: inline-flex;
+    justify-content: center;
+}
 .nav-item {
-    margin: 0px 75px 0px 0px;
+    margin: 0px 40px;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 18px;
     font-weight: 200;
     text-transform: uppercase;
-    color: #F4F1D3;
-    position: relative;
+}
+
+.light-nav {
+    transition: all 0.35s ease;
+    color: #7D8395;
+    background-color: #FFF;
+}
+
+.light-nav a {
+    color: #7D8395;
 }
 
 .main {
     width: 800px;
     margin: auto;
-    padding:150px 0px 50px;
+    padding:200px 0px 50px;
 }
 
 .content {
@@ -248,12 +276,20 @@ nav {
     justify-content: space-evenly;
 }
 
+.white {
+    background-color: #FFF;
+}
+
+.gray {
+    background-color: #7D8395;
+}
+
 .darkgray {
     background-color: #222;
 }
 
 .blue {
-    background-color: #5A96BA
+    background-color: #5A96BA;
 }
 
 .green {
