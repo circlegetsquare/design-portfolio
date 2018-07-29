@@ -99,7 +99,7 @@ textarea {
    ========================================================================== */
 
 /* These are fonts which are loaded in from the Google Web Fonts library. Customize this as needed to utilize different fonts */
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:200,300,400,500,600,700|IBM+Plex+Sans:200,300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:200,300,400,500,600,700|IBM+Plex+Sans:200,200i,300,300i,400,400i,500,600,700');
 
 * {
 	box-sizing: border-box;	
@@ -107,7 +107,6 @@ textarea {
 
 a, a:visited, a:active {
     text-decoration: none;
-    color: #FFF;
     font-weight: 400;
 }
 
@@ -136,10 +135,25 @@ h3 {
     position: relative;
 }
 
-p {
+h4 {
+    font-size: 28px;
+    font-weight: 200;
+    line-height: 1;
+    
+}
+
+h5 {
+    font-size: 24px;
+    font-weight: 200;
+    line-height: 1;
+    text-align: center;
+}
+
+p, ul, li {
     font-weight: 200;
     font-size: 22px;
 }
+
 
 header {
     width: 100%;
@@ -149,6 +163,21 @@ header {
     z-index: 1;
     opacity: .95;
     color: #FFF;
+}
+
+quote {
+    font-weight: 200;
+    font-size: 20px;
+    font-style: italic;
+    padding: 0px;
+    margin: 0px;
+}
+
+.quote-attr {
+    margin-top: 0px;
+    margin-bottom: 50px;
+    font-size: 20px;
+    font-weight: 300;
 }
 
 .white-header {
@@ -181,15 +210,15 @@ header {
     opacity: .95;
 }
 
-.mint-header {
-    transition: background-color 0.35s ease;
-    background-color: #83C7B7;
-    opacity: .95;
-}
-
 .orange-header {
     transition: background-color 0.35s ease;
     background-color: #DD8348;
+    opacity: .95;
+}
+
+.mint-header {
+    transition: background-color 0.35s ease;
+    background-color: #83C7B7;
     opacity: .95;
 }
 
@@ -205,18 +234,11 @@ nav {
     margin-top: 75px;
     position: relative;
 }
+
 #top-nav {
     transition: background-color 0.35s ease; 
 }
 
-.menu:hover > a { 
-    color: #50E3C2;
-    text-decoration: none;
-}
-
-.menu:hover {
-    border: solid 1px #50E3C2;
-}
 
 .container {
     width:1280px;
@@ -226,8 +248,16 @@ nav {
     min-height:100vh;
 }
 
+.container a{
+    color: #FFF;
+}
+
 .case {
    color: #7D8395;
+}
+
+.case a {
+        color: #7D8395;
 }
 
 .nav-container {
@@ -237,10 +267,19 @@ nav {
     margin: auto;
 }
 
+.nav-container a {
+    color: #FFF;
+}
+
 .nav-menu {
     display: inline-flex;
     justify-content: center;
 }
+
+.nav-menu a {
+    color: #FFF;
+}
+
 .nav-item {
     margin: 0px 40px;
     font-family: 'IBM Plex Mono', monospace;
@@ -259,6 +298,10 @@ nav {
     color: #7D8395;
 }
 
+.light {
+    color: #7D8395;
+}
+
 .main {
     width: 800px;
     margin: auto;
@@ -274,6 +317,10 @@ nav {
     padding-bottom: 25px;
     display: flex;
     justify-content: space-evenly;
+}
+
+.light a {
+    color: #7D8395;
 }
 
 .white {

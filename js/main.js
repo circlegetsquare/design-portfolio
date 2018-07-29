@@ -79,7 +79,7 @@ var scene = new ScrollMagic.Scene({
     })
     .triggerHook(.1)
     .removeClassToggle(true) //remove class toggle
-    .setClassToggle("#top-nav", "mint-header") // add class toggle
+    .setClassToggle("#top-nav", "orange-header") // add class toggle
     //.addIndicators({name: "5"}) // add indicators (requires plugin)
     .addTo(controller);
 
@@ -88,7 +88,7 @@ var scene = new ScrollMagic.Scene({
     })
     .triggerHook(.1)
     .removeClassToggle(true) //remove class toggle
-    .setClassToggle("#top-nav", "orange-header") // add class toggle
+    .setClassToggle("#top-nav", "mint-header") // add class toggle
     //.addIndicators({name: "6"}) // add indicators (requires plugin)
     .addTo(controller);
     

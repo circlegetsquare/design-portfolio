@@ -1,3 +1,23 @@
 header {
     background-color: #5A96BA
 }
+
+a, a:visited, a:active {
+    text-decoration: none;
+    font-weight: 400;
+}
+
+p, ul, li {
+    font-size: 18px;
+}
+
+.light-nav {
+    transition: all 0.35s ease;
+    color: #7D8395;
+    background-color: #FFF;
+}
+
+.light-nav a {
+    color: #7D8395;
+}
+
