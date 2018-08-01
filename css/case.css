@@ -1,5 +1,5 @@
 header {
-    background-color: #5A96BA
+    background-color: #5A96BA;
 }
 
 a, a:visited, a:active {
@@ -13,11 +13,14 @@ p, ul, li {
 
 .light-nav {
     transition: all 0.35s ease;
-    color: #7D8395;
+    color: #575B67;
     background-color: #FFF;
 }
 
 .light-nav a {
-    color: #7D8395;
+    color: #575B67
 }
 
+.hero-spacer {
+    background-color:#5A96BA;
+}
