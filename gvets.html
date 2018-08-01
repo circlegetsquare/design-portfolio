@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main2.css">
   <link rel="stylesheet" href="css/case.css">
+  <link rel="stylesheet" href="css/slider-style.css">
   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,400,500,600,700|IBM+Plex+Sans:200,300,400,500,600,700" rel="stylesheet">
 </head>
 
@@ -362,65 +363,116 @@
 			<p>After discussing the results of the concept testing with our client, the team felt the best direction forward involved combining aspects of each prototype, prioritizing the features that were essential to ensuring efficient call handling.</p>
 			<p>To handle calls and complete forms efficiently, our prototype featured a <strong>clear and actionable home screen</strong>, <strong>streamlined decision support form</strong>, and <strong>call queue that is always visible</strong>. We included an in-system case review and a history of closed calls to provide transparency and ease administrative burden. We also wanted to continue to explore the concept of a <strong>user-focused analytics dashboard</strong> as a means to both inform the staff of their own performance and provide management a way to communicate key performance metrics.</p>
 
-			<h5>Active Cases Tab</h5>
-			<div class="flex-content flex-center">
-				<div class="content-container-prototype">
-					<img src="img/ActiveCases-tab.png" class="content-item-case-vert">
-				</div>
-				<div>
-					We used a tabbed navigation to maintain a consistent context throughout a user’s session and prioritized actionable information, displaying notifications for any outstanding action items. We surfaced unsubmitted forms as the top visual priority, allowing quick-access to recordings of the call for reference. We also included a persistent call queue in the right-hand pane that displays calls in the order received, noting how long each caller has been on hold. We placed the current day, date, and time, as well as the local time of the referring clinic at the top of the page for a glanceable quick reference.
-				</div>
-			</div>
+			<div class="outer-wrapper">
+					<div class="s-wrap s-type-1" role="slider">
+					  <input type="radio" id="s-1" name="slider-control" checked="checked">
+					  <input type="radio" id="s-2" name="slider-control">
+					  <input type="radio" id="s-3" name="slider-control">
+					  <input type="radio" id="s-4" name="slider-control">
+					  <input type="radio" id="s-5" name="slider-control">
+					  <input type="radio" id="s-6" name="slider-control">
+					  <ul class="s-content">
+						<li class="s-item">
+							<h5 class="slider">Active Cases Tab</h5>
+							<div class="flex-content flex-center">
+								<div class="content-container-prototype">
+									<img src="img/ActiveCases-tab.png" class="content-item-case-vert">
+								</div>
+								<div class="slider-caption">
+									We used a tabbed navigation to maintain a consistent context throughout a user’s session and prioritized actionable information, displaying notifications for any outstanding action items. We surfaced unsubmitted forms as the top visual priority, allowing quick-access to recordings of the call for reference. We also included a persistent call queue in the right-hand pane that displays calls in the order received, noting how long each caller has been on hold. We placed the current day, date, and time, as well as the local time of the referring clinic at the top of the page for a glanceable quick reference.
+								</div>
+							</div>
+						</li>
 
-			<h5>Decision Support Form</h5>
-			<div class="flex-content flex-center">
-				<div class="content-container-prototype">
-					<img src="img/DecisionSupportForm.png" class="content-item-case-vert">
-				</div>
-				<div>
-					We wanted to simulate a real call to gauge the usability of the streamlined decision support form. To do so, I built a functioning input form in so users could enter and save data in all input areas. This allowed the user to save the form and come back to it later—a key feature of our design. We also included detailed clinic information which was viewable while in the form, as well as a case history based on the caller’s number. We also made sure that the form would not obscure the call queue, since the presence of a new call could affect how a user would manage an active call.
-				</div>
-			</div>
+						<li class="s-item">
+							<h5 class="slider">Decision Support Form</h5>
+							<div class="flex-content flex-center">
+								<div class="content-container-prototype">
+									<img src="img/DecisionSupportForm.png" class="content-item-case-vert">
+								</div>
+								<div class="slider-caption">
+									We wanted to simulate a real call to gauge the usability of the streamlined decision support form. To do so, I built a functioning input form in so users could enter and save data in all input areas. This allowed the user to save the form and come back to it later—a key feature of our design. We also included detailed clinic information which was viewable while in the form, as well as a case history based on the caller’s number. We also made sure that the form would not obscure the call queue, since the presence of a new call could affect how a user would manage an active call.
+								</div>
+							</div>
+						</li>
 
-			<h5>In Review Tab</h5>
-			<div class="flex-content flex-center">
-				<div class="content-container-prototype">
-					<img src="img/InReview-tab.png" class="content-item-case-vert">
-				</div>
-				<div>
-					We used the same card style to display cases that needed further action or review, with bubble notifications indicating the total number of action items on the tab itself. We prioritized cases that had items for further review at the top of the section and located completed but unreviewed calls in the “queued for review” section.
-				</div>
-			</div>
+						<li class="s-item">
+							<h5 class="slider">In Review Tab</h5>
+							<div class="flex-content flex-center">
+								<div class="content-container-prototype">
+									<img src="img/InReview-tab.png" class="content-item-case-vert">
+								</div>
+								<div class="slider-caption">
+									We used the same card style to display cases that needed further action or review, with bubble notifications indicating the total number of action items on the tab itself. We prioritized cases that had items for further review at the top of the section and located completed but unreviewed calls in the “queued for review” section.
+								</div>
+							</div>
+						</li>
 
-			<h5>Review Form</h5>
-			<div class="flex-content flex-center">
-				<div class="content-container-prototype">
-					<img src="img/ReviewForm.png" class="content-item-case-vert">
-				</div>
-				<div>
-					Clicking into a case in the “Needs to be Resolved” group presents the users with a read-only version of the form. The manager had the ability to notate and comment on issues, and the staff member was able to respond to and resolve the comments using the Case Review panel to the right. Once the staff member responds, the manager could make additional comments or close the case.
-				</div>
-			</div>
+						<li class="s-item">
+							<h5 class="slider">Review Form</h5>
+							<div class="flex-content flex-center">
+								<div class="content-container-prototype">
+									<img src="img/ReviewForm.png" class="content-item-case-vert">
+								</div>
+								<div class="slider-caption">
+									Clicking into a case in the “Needs to be Resolved” group presents the users with a read-only version of the form. The manager had the ability to notate and comment on issues, and the staff member was able to respond to and resolve the comments using the Case Review panel to the right. Once the staff member responds, the manager could make additional comments or close the case.
+								</div>
+							</div>
+						</li>
 
-			<h5>Closed Calls Tab</h5>
-			<div class="flex-content flex-center">
-				<div class="content-container-prototype">
-					<img src="img/Closed-tab.png" class="content-item-case-vert">
-				</div>
-				<div>
-					We wanted to give a way for our users to check their call history, as well as a place to verify their closed cases. We utilized a list format over a card view so users can view more calls on the page. The initial view only shows the most recent calls to reduce system and cognitive load, but the user has the option to view more calls, as necessary.
-				</div>
-			</div>
+						<li class="s-item">
+							<h5 class="slider">Closed Calls Tab</h5>
+							<div class="flex-content flex-center">
+								<div class="content-container-prototype">
+									<img src="img/Closed-tab.png" class="content-item-case-vert">
+								</div>
+								<div class="slider-caption">
+									We wanted to give a way for our users to check their call history, as well as a place to verify their closed cases. We utilized a list format over a card view so users can view more calls on the page. The initial view only shows the most recent calls to reduce system and cognitive load, but the user has the option to view more calls, as necessary.
+								</div>
+							</div>
+						</li>
 
-			<h5>Analytics Tab</h5>
-			<div class="flex-content flex-center">
-				<div class="content-container-prototype">
-					<img src="img/Analytics-tab.png" class="content-item-case-vert">
-				</div>
-				<div>
-					Most of the content on the analytics tab was new, so this screen was more about fleshing out the concept than the usability. From what we already heard, users wanted to see data that pertained to their own call history, so we prioritized metrics that showed their call volume over time, as well as the ability to download the call history data. Finally, we also included performance metrics showing average time to call pick up and call time.
-				</div>
-			</div>
+						<li class="s-item">
+							<h5 class="slider">Analytics Tab</h5>
+							<div class="flex-content flex-center">
+								<div class="content-container-prototype">
+									<img src="img/Analytics-tab.png" class="content-item-case-vert">
+								</div>
+								<div class="slider-caption">
+									Most of the content on the analytics tab was new, so this screen was more about fleshing out the concept than the usability. From what we already heard, users wanted to see data that pertained to their own call history, so we prioritized metrics that showed their call volume over time, as well as the ability to download the call history data. Finally, we also included performance metrics showing average time to call pick up and call time.
+								</div>
+							</div>
+						</li>
+					  </ul>
+					  <div class="s-control">
+						<label class="s-c-1" for="s-1"></label>
+						<label class="s-c-2" for="s-2"></label>
+						<label class="s-c-3" for="s-3"></label>
+						<label class="s-c-4" for="s-4"></label>
+						<label class="s-c-5" for="s-5"></label>
+						<label class="s-c-6" for="s-6"></label>
+					  </div>
+					  <div class="s-nav">
+						<label class="s-nav-1 right" for="s-2"></label>
+						<label class="s-nav-2 left" for="s-1"></label>
+						<label class="s-nav-2 right" for="s-3"></label>
+						<label class="s-nav-3 left" for="s-2"></label>
+						<label class="s-nav-3 right" for="s-4"></label>
+						<label class="s-nav-4 left" for="s-3"></label>
+						<label class="s-nav-4 right" for="s-5"></label>
+						<label class="s-nav-5 left" for="s-4"></label>
+						<label class="s-nav-5 right" for="s-6"></label>
+						<label class="s-nav-6 left" for="s-5"></label>
+					  </div>
+					</div>
+				  
+				  </div>
+
+
+
+
+
+			
 
 
 

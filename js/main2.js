@@ -1,3 +1,4 @@
+
 // Inital page load animations and 
 window.onload = function(){
    
@@ -7,6 +8,7 @@ window.onload = function(){
         TweenMax.to(window, 1.25, {scrollTo:{y:"#section2", offsetY:195}, ease:Power2.easeInOut});
     }
 }
+
 
 /*window.onscroll = function() {myFunction()};
 

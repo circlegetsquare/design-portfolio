@@ -454,7 +454,7 @@ nav {
 }
 
 .content-container-prototype{
-    height:60vh;
+    height:55vh;
     margin-bottom: 15px;
 }
 
@@ -541,6 +541,18 @@ stack {
 
 .caption {
     font-size:12px;
+}
+
+.slider-caption {
+    font-size:14px;
+    margin: 0 25px;
+    font-weight: 300;
+}
+
+.slider {
+    margin: auto;
+    margin-top: 10px;
+    width: 50%;
 }
 
 .bottom-align {
