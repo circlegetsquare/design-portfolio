@@ -35,13 +35,50 @@ var scene =new ScrollMagic.Scene({duration: 400, offset:40})
 
 
 var scene = new ScrollMagic.Scene({
-        triggerElement: "#trigger1"
+    triggerElement: "#trigger1"
     })
     .triggerHook(.15)
     .removeClassToggle(true) //remove class toggle
     .setClassToggle("#top-nav", "light-nav") // add class toggle
     //.addIndicators({name: "1"}) // add indicators (requires plugin)
     .addTo(controller);
+
+var scene = new ScrollMagic.Scene({
+    triggerElement: "#trigger1"
+    })
+    .triggerHook(.15)
+    .removeClassToggle(true) //remove class toggle
+    .setClassToggle("#Rect1", "light-logo") // add class toggle
+    //.addIndicators({name: "1"}) // add indicators (requires plugin)
+    .addTo(controller);
+
+    var scene = new ScrollMagic.Scene({
+    triggerElement: "#trigger1"
+    })
+    .triggerHook(.15)
+    .removeClassToggle(true) //remove class toggle
+    .setClassToggle("#Rect2", "light-logo") // add class toggle
+    //.addIndicators({name: "1"}) // add indicators (requires plugin)
+    .addTo(controller);
+
+    var scene = new ScrollMagic.Scene({
+        triggerElement: "#trigger1"
+    })
+    .triggerHook(.15)
+    .removeClassToggle(true) //remove class toggle
+    .setClassToggle("#Rect3", "light-logo") // add class toggle
+    //.addIndicators({name: "1"}) // add indicators (requires plugin)
+    .addTo(controller);
+
+    var scene = new ScrollMagic.Scene({
+        triggerElement: "#trigger1"
+    })
+    .triggerHook(.15)
+    .removeClassToggle(true) //remove class toggle
+    .setClassToggle("#Rect4", "light-logo") // add class toggle
+    //.addIndicators({name: "1"}) // add indicators (requires plugin)
+    .addTo(controller);
+
 
 
 

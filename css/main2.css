@@ -147,10 +147,10 @@ h5 {
     font-size: 22px;
     font-weight: 400;
     line-height: 1;
-    text-align: center;
     padding-bottom: 10px;
     border-bottom: 1px solid;
-    margin: 65px 0px 10px;
+    margin: 45px 0px 10px;
+    color: #5A96BA;
 }
 
 p, ul, li {
@@ -179,22 +179,50 @@ header {
 
 quote {
     font-weight: 200;
-    font-size: 20px;
+    font-size: 26px;
     font-style: italic;
-    padding: 0px;
-    margin: 0px;
+    display: flex;
+    margin-top:15px;
 }
 
 .quote-attr {
-    margin-top: 0px;
-    margin-bottom: 50px;
-    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
     font-weight: 300;
+}
+
+.width-67 {
+    width: 67%;
+    margin: auto;
+}
+
+.user-insight {
+    padding: 10px 0px 0px;
+    font-weight: 600;
+}
+
+.text-align-right {
+    text-align: right;
 }
 
 .white-header {
     transition: background-color 0.35s ease;
     background-color: #FFF;
+    opacity: .95;
+}
+
+
+
+.blue-header {
+    transition: background-color 0.35s ease;
+    background-color: #5A96BA;
+    opacity: .95;
+}
+
+.mint-header {
+    transition: background-color 0.35s ease;
+    background-color: #83C7B7;
     opacity: .95;
 }
 
@@ -204,21 +232,9 @@ quote {
     opacity: .95;
 }
 
-.blue-header {
-    transition: background-color 0.35s ease;
-    background-color: #5A96BA;
-    opacity: .95;
-}
-
 .green-header {
     transition: background-color 0.35s ease;
     background-color: #55908C;
-    opacity: .95;
-}
-
-.yellow-header {
-    transition: background-color 0.35s ease;
-    background-color: #BBAA58;
     opacity: .95;
 }
 
@@ -228,9 +244,9 @@ quote {
     opacity: .95;
 }
 
-.mint-header {
+.yellow-header {
     transition: background-color 0.35s ease;
-    background-color: #83C7B7;
+    background-color: #BBAA58;
     opacity: .95;
 }
 
@@ -290,7 +306,7 @@ nav {
 .nav-container {
     width: 1280px;
     height: 120px;
-    display: inline-flex;
+    display: flex;
     margin: auto;
 }
 
@@ -298,9 +314,17 @@ nav {
     color: #FFF;
 }
 
+.container-nav-menu {
+    display: flex; 
+    width: 800px;
+    padding-bottom: 50px;
+    margin: auto;
+}
+
 .nav-menu {
-    display: inline-flex;
-    justify-content: center;
+    display: flex;
+    justify-content: space-between;
+    width: 67%;
 }
 
 .nav-menu a {
@@ -308,7 +332,6 @@ nav {
 }
 
 .nav-item {
-    margin: 0px 40px;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 18px;
     font-weight: 200;
@@ -424,6 +447,11 @@ nav {
     position: absolute;
 }
 
+.container-logo{
+    cursor: pointer;
+    float: left;
+    position: absolute;
+}
 .svg-logo {
     float: left;
     position: absolute;
@@ -458,9 +486,21 @@ nav {
     margin-bottom: 15px;
 }
 
+.content-container-prototype-final{
+    height:68vh;
+    margin-bottom: 15px;
+}
+
 .content-container-large{
     width: 500px;
     margin-bottom: 20px;
+    padding:10px;
+}
+
+.content-container-full{
+    width: 100%;
+    margin-bottom: 20px;
+    padding:10px;
 }
 
 .width-546 {
@@ -514,6 +554,10 @@ stack {
     padding: 0px;
 }
 
+.top-margin50 {
+    margin-top: 50px;
+}
+
 .content-item-case {
     width: 100%;
     display: flex;
@@ -541,6 +585,7 @@ stack {
 
 .caption {
     font-size:12px;
+    text-align: left;
 }
 
 .slider-caption {
@@ -551,8 +596,9 @@ stack {
 
 .slider {
     margin: auto;
+    text-align: center;
     margin-top: 10px;
-    width: 50%;
+    width: 40%;
 }
 
 .bottom-align {

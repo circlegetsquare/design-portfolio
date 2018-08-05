@@ -24,3 +24,7 @@ p, ul, li {
 .hero-spacer {
     background-color:#5A96BA;
 }
+
+.light-logo {
+    stroke: #575B67;
+}

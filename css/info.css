@@ -1,0 +1,16 @@
+header {
+    background-color: #7D8395;
+}
+
+a, a:visited, a:active {
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.hero-spacer {
+    background-color:#5A96BA;
+}
+
+.light-logo {
+    stroke: #575B67;
+}
