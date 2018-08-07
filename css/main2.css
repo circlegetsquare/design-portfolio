@@ -272,10 +272,15 @@ quote {
 }
 
 nav {
-    width: 800px;
-    margin: auto;
-    margin-top: 75px;
+    margin: 75px 0 0 16.5%;
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 37%;
+}
+
+nav a {
+    color: #FFF;
 }
 
 #top-nav {
@@ -288,7 +293,7 @@ nav {
     margin: auto;
     font-family: 'IBM Plex Sans', sans-serif;
     color: #FFF;
-    min-height:100vh;
+    min-height:110vh;
 }
 
 .container a{
@@ -319,16 +324,6 @@ nav {
     width: 800px;
     padding-bottom: 50px;
     margin: auto;
-}
-
-.nav-menu {
-    display: flex;
-    justify-content: space-between;
-    width: 67%;
-}
-
-.nav-menu a {
-    color: #FFF;
 }
 
 .nav-item {
@@ -512,19 +507,37 @@ nav {
 }
 
 .content-container-2item {
-    width: 48%;
+    width: 48.6%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.content-container-2item-40 {
+    width: 44.1%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.content-container-2item-52 {
+    width: 54%;
     padding: 10px;
     margin-bottom: 20px;
 }
 
 .content-container-3item {
-    width: 31%;
+    width: 30%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.content-container-3item-32 {
+    width: 31.5%;
     padding: 10px;
     margin-bottom: 20px;
 }
 
 .content-container-4item {
-    width: 24%;
+    width: 24.5%;
     padding: 10px;
     margin-bottom: 20px;
 }
@@ -541,7 +554,7 @@ nav {
     margin-bottom: 20px;
 }
 
-stack {
+.stack {
     flex-direction: column;
     justify-content: space-between;
 }
@@ -552,6 +565,10 @@ stack {
 
 .nopad {
     padding: 0px;
+}
+
+.nowrap {
+    flex-wrap: nowrap;
 }
 
 .top-margin50 {
@@ -583,10 +600,7 @@ stack {
     height:125px;
 }
 
-.caption {
-    font-size:12px;
-    text-align: left;
-}
+
 
 .slider-caption {
     font-size:14px;
@@ -607,6 +621,11 @@ stack {
 
 .prototype-caption {
     margin-top: 50px;
+}
+
+.caption {
+    font-size:12px;
+    text-align: left;
 }
 
 /* ==========================================================================
