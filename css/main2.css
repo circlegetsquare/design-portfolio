@@ -188,17 +188,32 @@ button {
     text-transform: uppercase;
     display: block;
 }
-.coming-soon {
-    border: 1px solid #7D8395;
-    color: #7D8395;
-    pointer-events: none;
-}
 
 button:hover {
     background-color:#5A96BA;
     color: #FFF;
     
 }
+
+.code-content button {
+    color: #83C7B7;
+    border-color: #83C7B7;
+    margin: 0px 15px;
+    width: 80px;
+}
+
+.code-content button:hover {
+    color:#FFF;
+    background-color: #83C7B7;
+}
+
+.coming-soon {
+    border: 1px solid #7D8395;
+    color: #7D8395;
+    pointer-events: none;
+}
+
+
 
 quote {
     font-weight: 200;
@@ -312,6 +327,10 @@ quote {
     width: 50%;
 }
 
+.code-logo {
+    height: 75px;
+    width: auto;
+}
 nav {
     margin: 75px 0 0 16.5%;
     position: relative;
@@ -481,6 +500,34 @@ nav a {
 .design-content2 h4 {
     font-weight: 300;
     margin: 8px 0px 0px;
+}
+
+.code-container {
+    padding: 25px 15px;
+    width: 48.6%;
+    margin-bottom: 20px;
+}
+.code-content {
+    color: #575B67;
+    padding: 8px 12px 8px 8px;
+}
+
+.code-content p {
+    font-size: 16px;
+    font-weight: 300;
+    margin: 8px 0px 12px;
+}
+
+.code-content h4 {
+    font-weight: 300;
+    margin: 8px 0px 0px;
+}
+
+.code-logo-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
 }
 
 .card-shadow {

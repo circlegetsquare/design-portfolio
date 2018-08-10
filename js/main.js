@@ -10,7 +10,7 @@ window.onload = function(){
     var scrollTarget = document.getElementById("top-scroller");
 
     scrollTarget.onclick = function() {
-        TweenMax.to(window, 1.25, {scrollTo:{y:"#section2", offsetY:190}, ease:Power2.easeInOut});
+        TweenMax.to(window, 1.25, {scrollTo:{y:"#section2", offsetY:140}, ease:Power2.easeInOut});
     }
 }
 
@@ -64,7 +64,7 @@ var scene = new ScrollMagic.Scene({
     .setClassToggle("#top-nav", "darkgray-header") // add class toggle
     //.addIndicators({name: "3"}) // add indicators (requires plugin)
     .addTo(controller);
-
+/*
 var scene = new ScrollMagic.Scene({
         triggerElement: "#trigger4"
     })
@@ -81,7 +81,7 @@ var scene = new ScrollMagic.Scene({
     .removeClassToggle(true) //remove class toggle
     .setClassToggle("#top-nav", "yellow-header") // add class toggle
     //.addIndicators({name: "5"}) // add indicators (requires plugin)
-    .addTo(controller);
+    .addTo(controller); */
 
 /*var scene = new ScrollMagic.Scene({
         triggerElement: "#trigger6"
