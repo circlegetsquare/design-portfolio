@@ -10,7 +10,7 @@ window.onload = function(){
     var scrollTarget = document.getElementById("top-scroller");
 
     scrollTarget.onclick = function() {
-        TweenMax.to(window, 1.25, {scrollTo:{y:"#section2", offsetY:240}, ease:Power2.easeInOut});
+        TweenMax.to(window, 1.25, {scrollTo:{y:"#section2", offsetY:190}, ease:Power2.easeInOut});
     }
 }
 

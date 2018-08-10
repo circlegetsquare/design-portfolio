@@ -124,8 +124,8 @@ h1 {
 h2 {
     font-size: 48px;
     font-weight: 500;
-    line-height: 0;
     position: relative;
+    margin: 0px 0px 25px;
 }
 
 h3 {
@@ -148,7 +148,6 @@ h5 {
     font-weight: 400;
     line-height: 1;
     padding-bottom: 10px;
-    border-bottom: 1px solid;
     margin: 45px 0px 10px;
     color: #5A96BA;
 }
@@ -175,6 +174,30 @@ header {
     z-index: 1;
     opacity: .95;
     color: #FFF;
+}
+
+button {
+    background-color: #FFF;
+    border: 1px solid #5A96BA;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    font-weight: 400;
+    color: #5A96BA;
+    margin-top:10px;
+    padding: 10px;
+    text-transform: uppercase;
+    display: block;
+}
+.coming-soon {
+    border: 1px solid #7D8395;
+    color: #7D8395;
+    pointer-events: none;
+}
+
+button:hover {
+    background-color:#5A96BA;
+    color: #FFF;
+    
 }
 
 quote {
@@ -271,6 +294,24 @@ quote {
     width: auto;
 }
 
+.design-img {
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.max-75 {
+    min-height: 50px;
+    max-height: 75px;
+    width: auto;
+}
+
+
+.design-logo {
+    padding: 20px 0px;
+    width: 50%;
+}
+
 nav {
     margin: 75px 0 0 16.5%;
     position: relative;
@@ -350,7 +391,7 @@ nav a {
 .main {
     width: 800px;
     margin: auto;
-    padding:200px 0px 50px;
+    padding:150px 0px 100px;
 }
 
 .full-width {
@@ -363,9 +404,9 @@ nav a {
 
 .content-item {
     width: 100%;
-    padding-bottom: 25px;
+    margin-bottom: 35px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .light a {
@@ -409,17 +450,58 @@ nav a {
     display: flex;
 }
 
+.design-content1 {
+    border: solid 1px;
+    height: 350px;
+    width: 350px;
+    background-color: #FFF;
+    display: flex;
+    align-items: center;
+    padding: 10px 10px 25px;
+}
+
+.design-content2 {
+    height: 350px;
+    width: 440px;
+    color: #575B67;
+    background-color: #FFF;
+    padding: 5px 12px 5px 5px;
+}
+
+.design-content2 a {
+    color: #5A96BA;
+}
+
+.design-content2 p {
+    font-size: 16px;
+    font-weight: 300;
+    margin: 8px 0px 12px;
+}
+
+.design-content2 h4 {
+    font-weight: 300;
+    margin: 8px 0px 0px;
+}
+
+.card-shadow {
+    -webkit-box-shadow: 5px 6px 8px 0px rgba(87,91,103,0.55);
+    -moz-box-shadow: 5px 6px 8px 0px rgba(87,91,103,0.55);
+    box-shadow: 5px 6px 8px 0px rgba(87,91,103,0.55);
+}
+
 .placeholder {
     border: solid 1px;
-    height: 375px;
-    width: 375px;
+    height: 275px;
+    width: 400px;
+    background-color: #FFF;
+    display: flex;
+    align-items: center;
+    padding: 10px;
 }
 
 .placeholder2 {
-    border: solid 1px;
-    height: 250px;
-    width: 375px;
-    align-self: center;
+    height: 200px;
+    width: 320px;
 }
 
 .size-200 {
