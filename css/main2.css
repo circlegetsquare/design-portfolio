@@ -304,12 +304,18 @@ quote {
     display: block;
 }
 
+.hero-spacer-info {
+    height: 167px;
+    width: 100%;
+    display: block;
+}
+
 .hero-img {
     height: 100%;
     width: auto;
 }
 
-.design-img {
+.hero2-img {
     width: 100%;
     height: auto;
     margin: auto;
@@ -328,7 +334,7 @@ quote {
 }
 
 .code-logo {
-    height: 75px;
+    height: 65px;
     width: auto;
 }
 nav {
@@ -354,6 +360,7 @@ nav a {
     font-family: 'IBM Plex Sans', sans-serif;
     color: #FFF;
     min-height:110vh;
+    align-items: flex-start;
 }
 
 .container a{
@@ -411,6 +418,13 @@ nav a {
     width: 800px;
     margin: auto;
     padding:150px 0px 100px;
+}
+
+.left-col {
+    width: 230px;
+    padding: 0px 50px 0px 20px;
+    float: left;
+    background-color: #7D8395;
 }
 
 .full-width {
@@ -534,6 +548,25 @@ nav a {
     -webkit-box-shadow: 5px 6px 8px 0px rgba(87,91,103,0.55);
     -moz-box-shadow: 5px 6px 8px 0px rgba(87,91,103,0.55);
     box-shadow: 5px 6px 8px 0px rgba(87,91,103,0.55);
+}
+
+.photo-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.photo-gallery {
+    height: 250px;
+    width: auto;
+    margin: 0px 0px 35px;
+}
+
+.photo-gallery2 {
+    height: 200px;
+    width: 200px;
+    margin: 0px 0px 35px;
+    object-fit: cover;
 }
 
 .placeholder {
