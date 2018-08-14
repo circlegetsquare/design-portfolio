@@ -361,6 +361,8 @@ nav a {
     color: #FFF;
     min-height:110vh;
     align-items: flex-start;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 
 .container a{

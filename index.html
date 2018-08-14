@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Josh Miller / UX Designer</title>
+  <title>Josh Miller: UX / Product Designer</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -80,11 +80,11 @@
 		</div>
 </header>
 
-<div class="container content" id="top-section">
+<div class="container content lazy-load" id="top-section">
 	
 	<div class="main">
 		<h1 id="name-title">Josh Miller</h1>
-		<h3 id="title-title">UX Designer</h3>
+		<h3 id="title-title">UX / Product Designer</h3>
 		<div id="top-content"><p>I’m a UX designer with a background in UI, code, and data. When I’m not in front of my screen, I spend time gardening, traveling, toiling in my workshop, and hanging out in Chicago with my trusty canine companion, <a href="https://www.instagram.com/p/aZVHIREf7m/" target="_blank">B.A. Baracus</a>.</p>
 		<p><a href="mailto:josh@jmiller.design">Drop me a line </a>if you’d like to collaborate or just say hello.</p>
 		</div>
@@ -324,9 +324,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
 <script src="js/plugins.js"></script>
 <script src="js/main.js"></script>
-
-<script src="js/slidebox-lazy-min.js"></script>
-<script src="js/main-min.js"></script>
+<script>
+		(function (w, d) {
+			w.addEventListener('LazyLoad::Initialized', function (e) {
+				w.lazyLoadInstance = e.detail.instance;
+			}, false);
+			var b = d.getElementsByTagName('body')[0];
+			var s = d.createElement("script"); s.async = true;
+			var v = !("IntersectionObserver" in w) ? "8.11.0" : "10.10.0";
+			s.src = "https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/" + v + "/lazyload.min.js";
+			w.lazyLoadOptions = {};
+			b.appendChild(s);
+		}(window, document));
+	</script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>

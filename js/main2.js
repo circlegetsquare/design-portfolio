@@ -79,7 +79,11 @@ var scene = new ScrollMagic.Scene({
     //.addIndicators({name: "1"}) // add indicators (requires plugin)
     .addTo(controller);
 
+// LazyLoad
 
+var myLazyLoad = new LazyLoad({
+    container: document.getElementsByClassName('container')
+});
 
 
 
