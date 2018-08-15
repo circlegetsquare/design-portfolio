@@ -14,3 +14,11 @@ a, a:visited, a:active {
 .light-logo {
     stroke: #575B67;
 }
+
+.logo {
+    opacity: 1;
+}
+
+.nav-item {
+    opacity: 1;
+}
