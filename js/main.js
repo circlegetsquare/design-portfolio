@@ -11,6 +11,12 @@ window.onload = function(){
 
     scrollTarget.onclick = function() {
         TweenMax.to(window, 1.25, {scrollTo:{y:"#section2", offsetY:140}, ease:Power2.easeInOut});
+
+    // LazyLoad
+
+    var myLazyLoad = new LazyLoad({
+        data_src: "src"
+    });
     }
 }
 
@@ -92,6 +98,7 @@ var scene = new ScrollMagic.Scene({
     //.addIndicators({name: "6"}) // add indicators (requires plugin)
     .addTo(controller); */
     
+
 
 
                
