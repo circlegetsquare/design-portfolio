@@ -13,13 +13,13 @@ window.onload = function(){
 
     scrollTarget.onclick = function() {
         TweenMax.to(window, 1.25, {scrollTo:{y:"#section2", offsetY:140}, ease:Power2.easeInOut});
-
+    }
     // LazyLoad
 
     var myLazyLoad = new LazyLoad({
         data_src: "src"
     });
-    }
+    
 }
 
 /*window.onscroll = function() {myFunction()};
@@ -108,6 +108,83 @@ var scene = new ScrollMagic.Scene({
     .addTo(controller); */
     
 
+   /* var pswpElement = document.querySelectorAll('.pswp')[0];
 
+    // build items array
+    var items = [
+        {
+            src: 'https://placekitten.com/600/400',
+            w: 600,
+            h: 400
+        },
+        {
+            src: 'https://placekitten.com/1200/900',
+            w: 1200,
+            h: 900
+        }
+    ];
+    
+    // define options (if needed)
+    var options = {
+        // optionName: 'option value'
+        // for example:
+        index: 0 // start at first slide
+    };
+    
+    // Initializes and opens PhotoSwipe
+    var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+    gallery.init();
+    */
+  
+   (function($) {
+    $('.picture').each( function() {
+        // Get the items.
+        var $pic     = $(this),
+            getItems = function() {
+                var items = [];
+                $pic.find('a').each(function() {
+                    var $href   = $(this).attr('href'),
+                        $size   = $(this).data('size').split('x'),
+                        $width  = $size[0],
+                        $height = $size[1];
+
+                    var item = {
+                        src : $href,
+                        w   : $width,
+                        h   : $height
+                    }
+
+                    items.push(item);
+                    console.log(item);
+                });
+                return items;
+            }
+
+        var items = getItems();
+
+        // Preload image.
+        var image = [];
+        $.each(items, function(index, value) {
+            image[index]     = new Image();
+            image[index].src = value['src'];
+        });
+
+        // Binding click event.
+        var $pswp = $('.pswp')[0];
+        $pic.on('click', 'figure', function(event) {
+            event.preventDefault();
+            
+            var $index = $(this).index();
+            var options = {
+                index: $index,
+                bgOpacity: 0.7,
+                showHideOpacity: true
+            }
+
+            var lightBox = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
+            lightBox.init();
+        });
+    });
+})(jQuery);
 
                
