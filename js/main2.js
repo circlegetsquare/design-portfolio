@@ -1,13 +1,20 @@
 
 // Inital page load animations and 
-window.onload = function(){
+$(function(){
    
     var scrollTarget = document.getElementById("top-scroller");
 
     scrollTarget.onclick = function() {
         TweenMax.to(window, 1.25, {scrollTo:{y:"#section2", offsetY:140}, ease:Power2.easeInOut});
     }
-}
+
+        // LazyLoad
+
+        var myLazyLoad = new LazyLoad({
+            data_src: "src"
+        });
+        
+})
 
 
 /*window.onscroll = function() {myFunction()};
