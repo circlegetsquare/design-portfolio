@@ -1,5 +1,6 @@
 $(function(){
     TweenMax.to("#logo-div1", 2, {ease: Power3.easeOut, opacity:1, delay:.5});
+    TweenMax.set("#top-container", {className:"-=hidden"}); 
     TweenMax.staggerFrom(["#logo-div2", "#logo-div3", "#logo-div4"], 1, {ease: Power3.easeOut, top:-15, delay:2.5}, .2);
     TweenMax.staggerTo(["#logo-div2", "#logo-div3", "#logo-div4"], 1, {ease: Power3.easeOut, opacity:1, delay:2.5}, .2);
     TweenMax.to("#logo-div1", .8, {ease: Back.easeInOut.config(1), x:-58, delay:5.75});
