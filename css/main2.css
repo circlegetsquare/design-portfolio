@@ -565,12 +565,15 @@ nav a {
     margin: 0px 0px 35px;
 }
 
-.photo-gallery2 {
-    height: 200px;
-    width: 200px;
-    margin: 0px 0px 35px;
-    object-fit: cover;
+.landscape {
+    width: 377px;
 }
+
+.portrait {
+    width: 166px;
+}
+
+
 
 .placeholder {
     border: solid 1px;
@@ -796,7 +799,7 @@ img.error {
 
 img:not([src]) {
     visibility: hidden;
-} 
+}
 
 .slider-caption {
     font-size:14px;
