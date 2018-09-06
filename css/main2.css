@@ -144,12 +144,16 @@ h4 {
 
 h5 {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 22px;
+    font-size: 26px;
     font-weight: 400;
     line-height: 1;
     padding-bottom: 10px;
-    margin: 45px 0px 10px;
+    margin: 10px 0px 10px;
     color: #5A96BA;
+}
+
+.mint h5 {
+    color:  rgb(131, 199, 183);
 }
 
 p, ul, li {
@@ -183,7 +187,7 @@ button {
     font-size: 14px;
     font-weight: 400;
     color: #5A96BA;
-    margin-top:10px;
+    margin-top:25px;
     padding: 10px;
     text-transform: uppercase;
     display: block;
@@ -195,16 +199,20 @@ button:hover {
     
 }
 
-.code-content button {
+.mint button {
     color: #83C7B7;
     border-color: #83C7B7;
-    margin: 0px 15px;
+    margin: 25px 25px 0px 0px;
     width: 80px;
 }
 
-.code-content button:hover {
-    color:#FFF;
+.mint button:hover {
     background-color: #83C7B7;
+    color:#FFF;
+}
+
+.mint a, .blue a {
+    text-decoration: none;
 }
 
 .coming-soon {
@@ -212,8 +220,6 @@ button:hover {
     color: #7D8395;
     pointer-events: none;
 }
-
-
 
 quote {
     font-weight: 200;
@@ -246,46 +252,37 @@ quote {
 
 .white-header {
     transition: background-color 0.35s ease;
-    background-color: #FFF;
-    opacity: .95;
+    background-color:rgba(255, 255, 255, .97);
 }
-
-
 
 .blue-header {
     transition: background-color 0.35s ease;
-    background-color: #5A96BA;
-    opacity: .95;
+    background-color:rgba(90, 150, 186, .985);
 }
 
 .mint-header {
     transition: background-color 0.35s ease;
-    background-color: #83C7B7;
-    opacity: .95;
+    background-color: rgba(131, 199, 183, .97);
 }
 
 .darkgray-header {
     transition: background-color 0.35s ease;
-    background-color: #222;
-    opacity: .95;
+    background-color: rgba(34, 34, 34, .97);
 }
 
 .green-header {
     transition: background-color 0.35s ease;
-    background-color: #55908C;
-    opacity: .95;
+    background-color: rgba(85, 144, 140, .97);
 }
 
 .orange-header {
     transition: background-color 0.35s ease;
-    background-color: #DD8348;
-    opacity: .95;
+    background-color: rgba(221, 131, 72, .97);
 }
 
 .yellow-header {
     transition: background-color 0.35s ease;
-    background-color: #BBAA58;
-    opacity: .95;
+    background-color: rgba(187, 170, 88, .97);
 }
 
 .hero {
@@ -317,8 +314,6 @@ quote {
 
 .hero2-img {
     width: 100%;
-    height: auto;
-    margin: auto;
 }
 
 .max-75 {
@@ -327,15 +322,15 @@ quote {
     width: auto;
 }
 
-
 .design-logo {
     padding: 20px 0px;
     width: 50%;
 }
 
 .code-logo {
-    height: 65px;
-    width: auto;
+    height: 60px;
+    margin: auto;
+    margin-top: 15px;
 }
 nav {
     margin: 75px 0 0 16.5%;
@@ -359,13 +354,13 @@ nav a {
     margin: auto;
     font-family: 'IBM Plex Sans', sans-serif;
     color: #FFF;
-    min-height:110vh;
+    min-height:105vh;
     align-items: flex-start;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
 }
 
-.container a{
+.container a {
     color: #FFF;
 }
 
@@ -374,7 +369,7 @@ nav a {
 }
 
 .case a {
-        color: #5A96BA;
+    color: #5A96BA;
 }
 
 .nav-container {
@@ -417,6 +412,12 @@ nav a {
     color: #7D8395;
 }
 
+.main-top {
+    width: 800px;
+    margin: auto;
+    padding:150px 0px 20px;
+}
+
 .main {
     width: 800px;
     margin: auto;
@@ -440,7 +441,6 @@ nav a {
 
 .content-item {
     width: 100%;
-    margin-bottom: 35px;
     display: flex;
     justify-content: space-between;
 }
@@ -486,32 +486,45 @@ nav a {
     display: flex;
 }
 
+.block{
+    display: block;
+}
+
+.design-container {
+    padding: 25px 0px;
+}
+
+.design-container hr {
+    width: 65%;
+    margin: 16px auto;
+}
+
+.design-container p {
+    font-size: 16px;
+    font-weight: 300;
+    margin: 15px 0px 0px;
+    color: #575B67;
+}
+
 .design-content1 {
-    border: solid 1px;
-    height: 350px;
     width: 350px;
     background-color: #FFF;
     display: flex;
-    align-items: center;
-    padding: 10px 10px 25px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 25px 35px 25px 65px;
 }
 
 .design-content2 {
-    height: 350px;
-    width: 440px;
-    color: #575B67;
+    width: 450px;
     background-color: #FFF;
-    padding: 5px 12px 5px 5px;
+    padding: 5px 55px 25px 0px;
+    align-self: flex-end;
 }
 
 .design-content2 a {
     color: #5A96BA;
-}
-
-.design-content2 p {
-    font-size: 16px;
-    font-weight: 300;
-    margin: 8px 0px 12px;
 }
 
 .design-content2 h4 {
@@ -519,11 +532,32 @@ nav a {
     margin: 8px 0px 0px;
 }
 
+.design-content3 {
+    padding: 5px 60px 15px 40px; 
+}
+
 .code-container {
     padding: 25px 15px;
     width: 48.6%;
     margin-bottom: 20px;
 }
+
+.code-content1 {
+    width: 350px;
+    background-color: #FFF;
+    padding: 25px 35px 25px 40px;
+}
+
+.code-content2 {
+    width: 450px;
+    background-color: #FFF;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 12px 50px 25px 0px;
+
+}
+
 .code-content {
     color: #575B67;
     padding: 8px 12px 8px 8px;
@@ -532,7 +566,7 @@ nav a {
 .code-content p {
     font-size: 16px;
     font-weight: 300;
-    margin: 8px 0px 12px;
+    margin: 20px 0px 12px;
 }
 
 .code-content h4 {
@@ -548,9 +582,15 @@ nav a {
 }
 
 .card-shadow {
-    -webkit-box-shadow: 5px 6px 8px 0px rgba(87,91,103,0.55);
-    -moz-box-shadow: 5px 6px 8px 0px rgba(87,91,103,0.55);
-    box-shadow: 5px 6px 8px 0px rgba(87,91,103,0.55);
+    -webkit-box-shadow: 5px 5px 7px 0px rgba(87,91,103,0.50);
+    -moz-box-shadow: 5px 5px 7px 0px rgba(87,91,103,0.50);
+    box-shadow: 5px 5px 7px 0px rgba(87,91,103,0.50);
+}
+
+.item-shadow {
+    -webkit-box-shadow: 3px 3px 5px 0px rgba(87,91,103,0.40);
+    -moz-box-shadow: 3px 3px 5px 0px rgba(87,91,103,0.40);
+    box-shadow: 3px 3px 5px 0px  rgba(87,91,103,0.40);
 }
 
 .photo-container {
@@ -621,11 +661,14 @@ nav a {
     position: absolute;
 }
 
+.scroller-container {
+    align-items: center;
+    height: calc(100vh - 550px);
+}
+
 .scroller {
     width: 51px;
-    height: auto;
     margin: auto;
-    margin-top: 50px;
     cursor:pointer;
     transition: 0.45s ease;
 }
@@ -634,6 +677,8 @@ nav a {
     transition: all 0.45s ease;
     opacity: 0;
 }
+
+
 
 
 .flex-content {

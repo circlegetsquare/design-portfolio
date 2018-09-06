@@ -37,7 +37,7 @@ var controller = new ScrollMagic.Controller();
     .setPin("#top-scroller") // pins the element for the the scene's duration
     .addTo(controller); // assign the scene to the controller*/
 
-var scene = new ScrollMagic.Scene({triggerElement: "#top-scroller", offset:-400})
+var scene = new ScrollMagic.Scene({triggerElement: "#top-scroller", offset:-200})
     .triggerHook(.15)
     //.removeClassToggle(true) //remove class toggle
     .setClassToggle("#top-scroller", "scrolled") // add class toggle
@@ -51,6 +51,15 @@ var scene = new ScrollMagic.Scene({
     .triggerHook(.1)
     .removeClassToggle(true) //remove class toggle
     .setClassToggle("#top-nav", "blue-header") // add class toggle
+    //.addIndicators({name: "1"}) // add indicators (requires plugin)
+    .addTo(controller);
+
+var scene = new ScrollMagic.Scene({
+        triggerElement: "#trigger1"
+    })
+    .triggerHook(.1)
+    .removeClassToggle(true) //remove class toggle
+    .setClassToggle("#my-html", "darkgray") // add class toggle
     //.addIndicators({name: "1"}) // add indicators (requires plugin)
     .addTo(controller);
 
