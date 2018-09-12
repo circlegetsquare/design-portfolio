@@ -38,6 +38,7 @@ p, ul, li {
 .scroller-container {
     align-items: center;
     height: calc(100vh - 700px);
+    margin-top: 25px;
 }
 
 .light-logo {

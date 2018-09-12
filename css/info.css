@@ -7,6 +7,10 @@ a, a:visited, a:active {
     font-weight: 400;
 }
 
+.container {
+    min-height:100vh;
+}
+
 .hero-spacer {
     background-color:#5A96BA;
 }
@@ -21,4 +25,10 @@ a, a:visited, a:active {
 
 .nav-item {
     opacity: 1;
+}
+
+.left-col {
+    width: 230px;
+    padding: 0px 50px 0px 20px;
+    float: left;
 }

@@ -1,18 +1,48 @@
 // Inital page load animations and 
 $(function(){
 
-    var scrollTarget = document.getElementById("top-scroller");
+    var logoNav= document.getElementById("nav-logo");
+    logoNav.onclick = function() {
+        TweenMax.to(window, 1.25, {scrollTo:{y:"#section1", offsetY:140}, ease:Power2.easeInOut});
+    }
 
-    scrollTarget.onclick = function() {
+    var nav1= document.getElementById("nav-1");
+    nav1.onclick = function() {
         TweenMax.to(window, 1.25, {scrollTo:{y:"#section2", offsetY:140}, ease:Power2.easeInOut});
     }
-    // LazyLoad
 
+    var scrollArrow = document.getElementById("top-scroller");
+    scrollArrow.onclick = function() {
+        TweenMax.to(window, 1.25, {scrollTo:{y:"#section2", offsetY:140}, ease:Power2.easeInOut});
+    }
+
+    var leftNav1= document.getElementById("left-nav1");
+    leftNav1.onclick = function() {
+        TweenMax.to(window, 1.25, {scrollTo:{y:"#section2", offsetY:140}, ease:Power2.easeInOut});
+    }
+
+    var leftNav2= document.getElementById("left-nav2");
+    leftNav2.onclick = function() {
+        TweenMax.to(window, 1.25, {scrollTo:{y:"#section3", offsetY:140}, ease:Power2.easeInOut});
+    }
+
+    var leftNav3= document.getElementById("left-nav3");
+    leftNav3.onclick = function() {
+        TweenMax.to(window, 1.25, {scrollTo:{y:"#section4", offsetY:140}, ease:Power2.easeInOut});
+    }
+
+    var leftNav4= document.getElementById("left-nav4");
+    leftNav4.onclick = function() {
+        TweenMax.to(window, 1.25, {scrollTo:{y:"#section5", offsetY:140}, ease:Power2.easeInOut});
+    }
+    
+    // LazyLoad
     var myLazyLoad = new LazyLoad({
         data_src: "src"
-    });
-    
+    });    
 })
+
+/* ... add scenes to offsetScenes array ... */
 
 /*window.onscroll = function() {myFunction()};
 
@@ -26,88 +56,62 @@ function myFunction() {
 
 var controller = new ScrollMagic.Controller();
 
-/* var scene =new ScrollMagic.Scene({duration: 200, offset:40})
-    .setTween("#top-scroller", {opacity: 0})
-    .addTo(controller); */
 
-    /*new ScrollMagic.Scene({
-        duration: 600,    // the scene should last for a scroll distance of 100px
-        offset: 50        // start this scene after scrolling for 50px
-    })
-    .setPin("#top-scroller") // pins the element for the the scene's duration
-    .addTo(controller); // assign the scene to the controller*/
+var scene = new ScrollMagic.Scene({triggerElement: "#section2", offset: -140})
+    .setPin("#side-nav")
+    .triggerHook("onLeave")
+    //.addIndicators({name: "2 (duration: 0)"}) // add indicators (requires plugin)
+    .addTo(controller);
 
 var scene = new ScrollMagic.Scene({triggerElement: "#top-scroller", offset:-200})
-    .triggerHook(.15)
+    .triggerHook(".15")
     //.removeClassToggle(true) //remove class toggle
     .setClassToggle("#top-scroller", "scrolled") // add class toggle
     //.addIndicators({name: "1"}) // add indicators (requires plugin)
     .addTo(controller);
 
-
-var scene = new ScrollMagic.Scene({
-        triggerElement: "#trigger1"
+var scene = new ScrollMagic.Scene({triggerElement: "#trigger1", offset: -120})
+    .triggerHook("onLeave")
+    .on('enter leave', function () {
+    $('#top-nav').toggleClass('blue-header');
+    $('#left-nav1').toggleClass('left-nav-active');
+    $('#my-html').toggleClass('html-bkg-toggle');
     })
-    .triggerHook(.1)
-    .removeClassToggle(true) //remove class toggle
-    .setClassToggle("#top-nav", "blue-header") // add class toggle
     //.addIndicators({name: "1"}) // add indicators (requires plugin)
     .addTo(controller);
 
-var scene = new ScrollMagic.Scene({
-        triggerElement: "#trigger1"
-    })
-    .triggerHook(.1)
-    .removeClassToggle(true) //remove class toggle
-    .setClassToggle("#my-html", "darkgray") // add class toggle
-    //.addIndicators({name: "1"}) // add indicators (requires plugin)
-    .addTo(controller);
-
-var scene = new ScrollMagic.Scene({
-        triggerElement: "#trigger2"
-    })
-    .triggerHook(.1)
-    .removeClassToggle(true) //remove class toggle
-    .setClassToggle("#top-nav", "mint-header") // add class toggle
+var scene = new ScrollMagic.Scene({triggerElement: "#trigger2", offset: -120})
+    .triggerHook("onLeave")
+    .on('enter leave', function () {
+        $('#top-nav').toggleClass('blue-header');
+        $('#top-nav').toggleClass('mint-header');
+        $('#left-nav1').toggleClass('left-nav-active');
+        $('#left-nav2').toggleClass('left-nav-active');
+        })
     //.addIndicators({name: "2"}) // add indicators (requires plugin)
     .addTo(controller);
 
-var scene = new ScrollMagic.Scene({
-        triggerElement: "#trigger3"
-    })
-    .triggerHook(.1)
-    .removeClassToggle(true) //remove class toggle
-    .setClassToggle("#top-nav", "darkgray-header") // add class toggle
+var scene = new ScrollMagic.Scene({triggerElement: "#trigger3", offset: -120})
+    .triggerHook("onLeave")
+    .on('enter leave', function () {
+        $('#top-nav').toggleClass('mint-header');
+        $('#top-nav').toggleClass('darkgray-header');
+        $('#left-nav2').toggleClass('left-nav-active');
+        $('#left-nav3').toggleClass('left-nav-active');
+        })
     //.addIndicators({name: "3"}) // add indicators (requires plugin)
     .addTo(controller);
-/*
-var scene = new ScrollMagic.Scene({
-        triggerElement: "#trigger4"
-    })
-    .triggerHook(.1)
-    .removeClassToggle(true) //remove class toggle
-    .setClassToggle("#top-nav", "orange-header") // add class toggle
-    //.addIndicators({name: "4"}) // add indicators (requires plugin)
+
+var scene = new ScrollMagic.Scene({triggerElement: "#trigger4", offset: -120})
+    .triggerHook("onLeave")
+    .on('enter leave', function () {
+        $('#top-nav').toggleClass('darkgray-header');
+        $('#top-nav').toggleClass('orange-header');
+        $('#left-nav3').toggleClass('left-nav-active');
+        $('#left-nav4').toggleClass('left-nav-active');
+        })
+    //.addIndicators({name: "3"}) // add indicators (requires plugin)
     .addTo(controller);
-
-var scene = new ScrollMagic.Scene({
-        triggerElement: "#trigger5"
-    })
-    .triggerHook(.1)
-    .removeClassToggle(true) //remove class toggle
-    .setClassToggle("#top-nav", "yellow-header") // add class toggle
-    //.addIndicators({name: "5"}) // add indicators (requires plugin)
-    .addTo(controller); */
-
-/*var scene = new ScrollMagic.Scene({
-        triggerElement: "#trigger6"
-    })
-    .triggerHook(.1)
-    .removeClassToggle(true) //remove class toggle
-    .setClassToggle("#top-nav", "mint-header") // add class toggle
-    //.addIndicators({name: "6"}) // add indicators (requires plugin)
-    .addTo(controller); */
-    
 
    /* var pswpElement = document.querySelectorAll('.pswp')[0];
 

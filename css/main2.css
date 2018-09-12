@@ -107,7 +107,7 @@ textarea {
 
 a, a:visited, a:active {
     text-decoration: none;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 a:hover {
@@ -147,13 +147,16 @@ h5 {
     font-size: 26px;
     font-weight: 400;
     line-height: 1;
-    padding-bottom: 10px;
     margin: 10px 0px 10px;
     color: #5A96BA;
 }
 
 .mint h5 {
     color:  rgb(131, 199, 183);
+}
+
+.orange h5 {
+    color:  rgb(221, 131, 72);
 }
 
 p, ul, li {
@@ -190,7 +193,6 @@ button {
     margin-top:25px;
     padding: 10px;
     text-transform: uppercase;
-    display: block;
 }
 
 button:hover {
@@ -211,9 +213,6 @@ button:hover {
     color:#FFF;
 }
 
-.mint a, .blue a {
-    text-decoration: none;
-}
 
 .coming-soon {
     border: 1px solid #7D8395;
@@ -316,6 +315,49 @@ quote {
     width: 100%;
 }
 
+.left-col-spacer1 {
+    width: 230px;
+    height: 100%;
+}
+
+.left-col {
+    width: 230px;
+    padding: 0px 50px 0px 20px;
+    position: relative;
+}
+
+.pin-container {
+    width: 1280px;
+    height: 0px;
+    border: 1px solid transparent;
+    margin: auto;
+}
+
+.container-left-nav{
+    width: 112px;
+    border: 1px solid #FFF;
+    padding: 10px 25px;
+    margin: 168px 0px 0px 20px;
+}
+
+.left-nav {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px;
+    font-weight: 200;
+    text-transform: uppercase;
+    line-height: 40px;
+    cursor:pointer;
+}
+
+.left-nav-active {
+    font-weight: 600;
+    transition: all .25s ease;
+} 
+
+.left-nav:hover {
+    text-decoration: underline;
+}
+
 .max-75 {
     min-height: 50px;
     max-height: 60px;
@@ -396,6 +438,7 @@ nav a {
     font-weight: 200;
     text-transform: uppercase;
     opacity: 0;
+    cursor:pointer;
 }
 
 .light-nav {
@@ -422,13 +465,6 @@ nav a {
     width: 800px;
     margin: auto;
     padding:150px 0px 100px;
-}
-
-.left-col {
-    width: 230px;
-    padding: 0px 50px 0px 20px;
-    float: left;
-    background-color: #7D8395;
 }
 
 .full-width {
@@ -478,6 +514,10 @@ nav a {
 }
 
 .orange {
+    background-color: #DD8348;
+}
+
+.html-bkg-toggle {
     background-color: #DD8348;
 }
 
@@ -581,6 +621,24 @@ nav a {
     margin-bottom: 10px;
 }
 
+.audio-cvr {
+    width: 275px;
+    margin: auto;
+}
+
+.audio-btn {
+    width: 50px;
+    height: 50px;
+    margin: 25px 25px 0px 0px;
+}
+
+.audio-content2 {
+    width: 450px;
+    background-color: #FFF;
+    padding: 12px 50px 25px 0px;
+
+}
+
 .card-shadow {
     -webkit-box-shadow: 5px 5px 7px 0px rgba(87,91,103,0.50);
     -moz-box-shadow: 5px 5px 7px 0px rgba(87,91,103,0.50);
@@ -649,6 +707,7 @@ nav a {
     float: left;
     position: absolute;
     opacity: 0;
+    cursor: pointer;
 }
 
 .container-logo{
