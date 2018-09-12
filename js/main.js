@@ -57,11 +57,20 @@ function myFunction() {
 var controller = new ScrollMagic.Controller();
 
 
-var scene = new ScrollMagic.Scene({triggerElement: "#section2", offset: -140})
+var sideNav = new ScrollMagic.Scene({triggerElement: "#section2", offset: -140})
     .setPin("#side-nav")
     .triggerHook("onLeave")
     //.addIndicators({name: "2 (duration: 0)"}) // add indicators (requires plugin)
     .addTo(controller);
+
+    $(window).resize(function () {
+        sideNav.destroy(true);
+        sideNav = new ScrollMagic.Scene({triggerElement: "#section2", offset: -140})
+            .setPin("#side-nav")
+            .triggerHook("onLeave")
+            //.addIndicators({name: "2 (duration: 0)"}) // add indicators (requires plugin)
+            .addTo(controller);
+      });
 
 var scene = new ScrollMagic.Scene({triggerElement: "#top-scroller", offset:-200})
     .triggerHook(".15")
