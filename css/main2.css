@@ -139,7 +139,7 @@ h4 {
     font-size: 28px;
     font-weight: 200;
     line-height: 1;
-    margin: 65px 0px 25px;
+    margin: 65px 0px 15px;
 }
 
 h5 {
@@ -147,7 +147,7 @@ h5 {
     font-size: 26px;
     font-weight: 400;
     line-height: 1;
-    margin: 10px 0px 10px;
+    margin: 30px 0px 5px;
     color: #5A96BA;
 }
 
@@ -162,6 +162,7 @@ h5 {
 p, ul, li {
     font-weight: 200;
     font-size: 22px;
+    margin: 10px 0px;
 }
 
 ul {
@@ -665,7 +666,26 @@ nav a {
     width: 166px;
 }
 
+.mobile-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
 
+.mobile-mock {
+    height: 395px;
+    width: auto;
+}
+
+.logo-case {
+    height: 250px;
+    width: auto;
+}
+
+.invision-proto {
+    height: 800px;
+}
 
 .placeholder {
     border: solid 1px;
