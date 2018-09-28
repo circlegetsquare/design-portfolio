@@ -223,10 +223,16 @@ button:hover {
 
 quote {
     font-weight: 200;
-    font-size: 26px;
+    font-size: 22px;
     font-style: italic;
     display: flex;
     margin-top:15px;
+}
+
+.problem-statement {
+    font-weight: 200;
+    font-size: 22px;
+    margin:15px 0 25px;
 }
 
 .quote-attr {
@@ -673,9 +679,21 @@ nav a {
     margin-top: 25px;
 }
 
-.mobile-mock {
+.mobile-mock, .mobile-mock-cpl {
     height: 395px;
     width: auto;
+}
+
+.mobile-hero {
+    height: 500px;
+    padding: 0 20%;
+    width: auto;
+    display: flex;
+    align-self: center;
+}
+
+.mobile-mock-cpl {
+    margin: 0 0 15px;
 }
 
 .logo-case {
@@ -871,6 +889,15 @@ nav a {
 
 .content-item-case {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 10px 0px;
+}
+
+.content-item-mobile {
+    width: 100%;
+    padding: 0 20%;
     display: flex;
     justify-content: center;
     text-align: center;
