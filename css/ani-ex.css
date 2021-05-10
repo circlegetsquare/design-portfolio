@@ -3,10 +3,5 @@ div {
     padding: 60px;
     display: block;
     margin: auto;
-    margin-top: 10%;
+    background-color: #ffffff;
 }
-
-button {
-  padding: 5px;
-  margin: 0 5px 5px;
-  }
