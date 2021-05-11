@@ -14,12 +14,12 @@ var fills = [
 
 gsap.set("#rect",{autoAlpha:1});
 
-document.getElementById("chng").addEventListener("mouseover", function() {
-  index = (index + 1) % fills.length;
-  gsap.to("#chng", {
-    autoAlpha: 1,
-    fill: fills[index],
-    overwrite: true,
-    duration: 1
+  document.getElementById("chng").addEventListener("mouseover", function() {
+    index = (index + 1) % fills.length;
+    gsap.to("#chng", {
+      autoAlpha: 1,
+      fill: fills[index],
+      overwrite: true,
+      duration: 1
+    });
   });
-});
