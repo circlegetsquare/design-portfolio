@@ -53,15 +53,16 @@ var elementID = "element-1";
         y = direction * 100;
     if(elem.classList.contains("gs_reveal_fromLeft")) {
       x = -300;
-      y = 0;
+      y = 100;
     } else if (elem.classList.contains("gs_reveal_fromRight")) {
       x = 300;
-      y = 0;
+      y = 100;
     }
     elem.style.transform = "translate(" + x + "px, " + y + "px)";
     elem.style.opacity = "0";
     gsap.fromTo(elem, {x: x, y: y, autoAlpha: 0}, {
-      duration: 1.25, 
+      delay: 1,
+      duration: 1.75, 
       x: 0,
       y: 0, 
       autoAlpha: 1, 
