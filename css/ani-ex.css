@@ -9,3 +9,11 @@ div {
 .tall {
     height: 1000px;
 }
+
+html {
+    background-color:#ffffff;
+}
+
+.cls-1 {
+    opacity: 0;
+}
