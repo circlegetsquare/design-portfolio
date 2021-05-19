@@ -1,2 +1,1 @@
-# design-portfolio
-My design and creative portfolio.
+# shutterfly-animation
