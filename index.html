@@ -46,9 +46,8 @@
 		}
 
 		/* Two-column layout: logo + photo on the left, title + body on the right.
-		   The block is centered: the side padding is the larger of the minimum
-		   gutters (20px left, 56px right — matching the 56px column gap) and the
-		   centering margin, so it's symmetric on wide windows. 986px = 170 + 56 + 760. */
+		   The block is centered: each side's padding is the larger of a 32px
+		   minimum and the centering margin. 986px = 170 + 56 + 760. */
 		.page {
 			display: grid;
 			grid-template-columns: 170px minmax(0, 760px);
@@ -57,7 +56,7 @@
 				"photo body";
 			column-gap: 56px;
 			row-gap: 43px;
-			padding: 0 max(56px, (100% - 986px) / 2) 80px max(20px, (100% - 986px) / 2);
+			padding: 0 max(32px, (100% - 986px) / 2) 80px;
 		}
 
 		/* Header and main only group content; their children sit on the grid */
@@ -67,10 +66,10 @@
 
 		/* Row 1. Logo: four outlined bars, stacked absolutely so each can animate on
 		   its own, scaled to span the title block from the top of the title's tall
-		   letters (17px) to the subtitle's baseline (95px). */
+		   letters to the subtitle's baseline. Both sit 32px from the top. */
 		header {
 			grid-area: logo;
-			padding-top: 17px;
+			padding-top: 32px;
 		}
 
 		.logo-wrap {
@@ -87,8 +86,63 @@
 			left: 0;
 		}
 
+		/* The four bars' layers overlap, so the layers ignore the pointer and only
+		   each bar's own shape responds to hover (once the intro has finished) */
+		.logo,
+		.logo svg {
+			pointer-events: none;
+		}
+
+		/* Let a bar grow past the SVG's edges on hover instead of clipping */
 		.logo svg {
 			display: block;
+			overflow: visible;
+		}
+
+		.logo path {
+			fill: #FFF;
+			fill-opacity: 0;
+			transition: fill-opacity .35s ease;
+		}
+
+		.logo-ready .logo path {
+			pointer-events: all;
+		}
+
+		/* Hover: a bar fills white... */
+		.logo-ready .logo path:hover {
+			fill-opacity: 1;
+		}
+
+		/* ...and grows slightly from its own center */
+		@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+			.logo path {
+				transform-box: fill-box;
+				transform-origin: center;
+				transition: fill-opacity .35s ease, transform .25s ease;
+			}
+
+			.logo-ready .logo path:hover {
+				transform: scale(1.1);
+			}
+
+			/* Once everything settles, a wave runs left to right across the bars,
+			   each playing its hover state (fill + grow) and back, like a passing
+			   cursor */
+			.logo path.ripple {
+				animation: ripple .5s ease-in-out both;
+			}
+
+			@keyframes ripple {
+				0%, 100% {
+					transform: scale(1);
+					fill-opacity: 0;
+				}
+				50% {
+					transform: scale(1.1);
+					fill-opacity: 1;
+				}
+			}
 		}
 
 		.js .logo {
@@ -102,10 +156,10 @@
 		/* Title block: the title's cap height meets the top of the logo */
 		.heading {
 			grid-area: heading;
-			padding-top: 11px;
+			padding-top: 26px;
 		}
 
-		/* Row 2 starts 142px down; the photo's top meets the cap height of the
+		/* Row 2 starts 157px down; the photo's top meets the cap height of the
 		   first paragraph line, 56px below the logo's bottom and the subtitle's
 		   baseline (matching the column gap). Fetched after everything else,
 		   revealed once the intro finishes. */
@@ -166,9 +220,14 @@
 		   photo floats beside the body text, which wraps around it and continues
 		   beneath (the old info page's approach). */
 		@media (max-width: 600px) {
+			/* Perimeter scales down to 20px */
 			.page {
 				display: block;
 				padding: 0 20px 80px;
+			}
+
+			header {
+				padding-top: 20px;
 			}
 
 			main {
@@ -272,6 +331,12 @@
 			var bars = ["#logo-div2", "#logo-div3", "#logo-div4"];
 			var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 			var portrait = document.getElementById("portrait");
+			var logo = document.querySelector(".logo-wrap");
+
+			// After the intro, the logo's bars respond to hover (see CSS)
+			function enableLogo() {
+				logo.classList.add("logo-ready");
+			}
 
 			// Hold the portrait download until everything else on the page has loaded
 			window.addEventListener("load", function () {
@@ -282,6 +347,7 @@
 				document.documentElement.className = "";
 				if (window.TweenMax) TweenMax.set("#logo-div1", {x: -58});
 				else document.getElementById("logo-div1").style.transform = "translateX(-58px)";
+				enableLogo();
 				return;
 			}
 
@@ -293,12 +359,51 @@
 			TweenMax.staggerFrom(["#name-title", "#title-title"], 1, {ease: Power3.easeOut, top: 25, opacity: 0, delay: 4}, .3);
 			TweenMax.from("#top-content", 1.25, {ease: Power3.easeOut, opacity: 0, delay: 4.85});
 
-			// Fade the portrait in last: once the intro has played and the image has arrived
+			// Fade the portrait in last: once the intro has played and the image has
+			// arrived. The logo becomes interactive when that fade ends (or straight
+			// after the intro if the image fails to load).
 			var waiting = 2;
+			var portraitFailed = false;
 			function revealPortrait() {
-				if (--waiting === 0) TweenMax.to(portrait, 2.25, {ease: Power2.easeOut, opacity: 1});
+				if (--waiting !== 0) return;
+				if (portraitFailed) settle();
+				else TweenMax.to(portrait, 2.25, {ease: Power2.easeOut, opacity: 1, onComplete: settle});
+			}
+
+			// Intro done: turn on the logo hover and run the ripple across its bars
+			// (left to right is DOM order: square, then the three bars)
+			function settle() {
+				enableLogo();
+				ripple();
+				// Repeat every 10s, skipping runs while the tab is in the background
+				setInterval(function () {
+					if (!document.hidden) ripple();
+				}, 10000);
+			}
+
+			function ripple() {
+				var paths = logo.querySelectorAll("path");
+				function endRipple(path) {
+					path.classList.remove("ripple");
+					path.style.animationDelay = "";
+				}
+				for (var i = 0; i < paths.length; i++) {
+					var delay = .3 + i * .12;
+					endRipple(paths[i]);
+					void paths[i].getBoundingClientRect(); // restart the animation cleanly
+					paths[i].style.animationDelay = delay + "s";
+					paths[i].classList.add("ripple");
+					paths[i].addEventListener("animationend", function () { endRipple(this); }, {once: true});
+					// Backup in case animationend never fires (e.g. a background tab),
+					// so the ripple can't block hover
+					setTimeout(endRipple, (delay + .6) * 1000, paths[i]);
+				}
 			}
 			portrait.addEventListener("load", revealPortrait);
+			portrait.addEventListener("error", function () {
+				portraitFailed = true;
+				revealPortrait();
+			});
 			TweenMax.delayedCall(7.2, revealPortrait);
 		})();
 	</script>
