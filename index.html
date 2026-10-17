@@ -106,7 +106,7 @@
 			fill-opacity: 0;
 			transform-box: fill-box;
 			transform-origin: center;
-			transition: fill-opacity .35s ease;
+			transition: fill .35s ease, fill-opacity .35s ease;
 		}
 
 		.logo-ready .logo path {
@@ -122,7 +122,7 @@
 		/* ...and grows slightly from its own center */
 		@media (hover: hover) and (prefers-reduced-motion: no-preference) {
 			.logo path {
-				transition: fill-opacity .35s ease, transform .25s ease;
+				transition: fill .35s ease, fill-opacity .35s ease, transform .25s ease;
 			}
 
 			.logo-ready .logo path:hover {
@@ -130,9 +130,9 @@
 				transform: scale(1.1);
 			}
 
-			/* Once everything settles, a wave runs across the bars (alternating direction),
-			   each playing its hover state (fill + grow) and back, like a passing
-			   cursor */
+			/* Once everything settles, a wave runs across the bars (alternating
+			   direction), each playing its hover state (fill + grow) and back, like
+			   a passing cursor */
 			.logo path.ripple {
 				animation: ripple .5s ease-in-out both;
 			}
@@ -415,10 +415,10 @@
 			function settle() {
 				enableLogo();
 				ripple();
-				// Repeat every 10s, skipping runs while the tab is in the background
+				// Repeat every 7s, skipping runs while the tab is in the background
 				setInterval(function () {
 					if (!document.hidden) ripple();
-				}, 10000);
+				}, 7000);
 			}
 
 			function endRipple(path) {
@@ -433,12 +433,43 @@
 				logoPaths[j].addEventListener("mouseenter", function () { endRipple(this); });
 			}
 
-			// Click: push the bar away and let it spring back (see .pressed in CSS).
-			// Restarting the class lets rapid clicks replay the bounce.
+			// Click colors rotate through the original site's section palette (blue,
+			// mint, dark gray, orange; the gray background color is left out since it
+			// wouldn't show). A preview of the color motif for when the site grows.
+			var clickColors = ["#5A96BA", "#83C7B7", "#222222", "#DD8348"];
+			var clickCount = 0;
+
+			// Flash a bar (fill and outline) with the next color, hold it briefly,
+			// then fade back to its resting look (white outline; white fill while
+			// hovered, empty otherwise)
+			function flashColor(path) {
+				var color = clickColors[clickCount++ % clickColors.length];
+				clearTimeout(path._flashHold);
+				clearTimeout(path._flashDone);
+				path.style.transition = "none";
+				path.style.fill = color;
+				path.style.fillOpacity = "1";
+				path.style.stroke = color;
+				void path.getBoundingClientRect();
+				path._flashHold = setTimeout(function () {
+					path.style.transition = "fill .9s ease, fill-opacity .9s ease, stroke .9s ease, transform .25s ease";
+					path.style.fill = "";
+					path.style.fillOpacity = "";
+					path.style.stroke = "";
+					path._flashDone = setTimeout(function () {
+						path.style.transition = "";
+					}, 900);
+				}, 350);
+			}
+
+			// Click: flash the next palette color, and push the bar away and let it
+			// spring back (see .pressed in CSS). Restarting the class lets rapid
+			// clicks replay the bounce.
 			logo.addEventListener("click", function (e) {
 				var path = e.target;
 				if (!logo.classList.contains("logo-ready") || path.tagName.toLowerCase() !== "path") return;
 				endRipple(path);
+				flashColor(path);
 				path.classList.remove("pressed");
 				void path.getBoundingClientRect();
 				path.classList.add("pressed");
