@@ -99,14 +99,19 @@
 			overflow: visible;
 		}
 
+		/* --rest is the size a bar settles at: 1, or the hover size while hovered */
 		.logo path {
+			--rest: 1;
 			fill: #FFF;
 			fill-opacity: 0;
+			transform-box: fill-box;
+			transform-origin: center;
 			transition: fill-opacity .35s ease;
 		}
 
 		.logo-ready .logo path {
 			pointer-events: all;
+			cursor: pointer;
 		}
 
 		/* Hover: a bar fills white... */
@@ -117,16 +122,15 @@
 		/* ...and grows slightly from its own center */
 		@media (hover: hover) and (prefers-reduced-motion: no-preference) {
 			.logo path {
-				transform-box: fill-box;
-				transform-origin: center;
 				transition: fill-opacity .35s ease, transform .25s ease;
 			}
 
 			.logo-ready .logo path:hover {
+				--rest: 1.1;
 				transform: scale(1.1);
 			}
 
-			/* Once everything settles, a wave runs left to right across the bars,
+			/* Once everything settles, a wave runs across the bars (alternating direction),
 			   each playing its hover state (fill + grow) and back, like a passing
 			   cursor */
 			.logo path.ripple {
@@ -141,6 +145,40 @@
 				50% {
 					transform: scale(1.1);
 					fill-opacity: 1;
+				}
+			}
+		}
+
+		/* Click: the bar is pushed away (shrinks), then springs back past its
+		   resting size and wobbles to a stop. Also runs on touch screens. */
+		@media (prefers-reduced-motion: no-preference) {
+			.logo path.pressed {
+				animation: press .75s both;
+			}
+
+			@keyframes press {
+				0% {
+					transform: scale(var(--rest));
+					animation-timing-function: ease-out;
+				}
+				18% {
+					transform: scale(calc(var(--rest) * .8));
+					animation-timing-function: ease-out;
+				}
+				42% {
+					transform: scale(calc(var(--rest) * 1.12));
+					animation-timing-function: ease-in-out;
+				}
+				62% {
+					transform: scale(calc(var(--rest) * .96));
+					animation-timing-function: ease-in-out;
+				}
+				80% {
+					transform: scale(calc(var(--rest) * 1.03));
+					animation-timing-function: ease-in-out;
+				}
+				100% {
+					transform: scale(var(--rest));
 				}
 			}
 		}
@@ -351,13 +389,15 @@
 				return;
 			}
 
-			TweenMax.to("#logo-div1", 2, {ease: Power3.easeOut, opacity: 1, delay: .5});
+			// Everything below is offset by `start` so the intro begins a beat after load
+			var start = .15;
+			TweenMax.to("#logo-div1", 2, {ease: Power3.easeOut, opacity: 1, delay: start + .5});
 			TweenMax.set("#top-container", {className: "-=hidden"});
-			TweenMax.staggerFrom(bars, 1, {ease: Power3.easeOut, top: -15, delay: 2.5}, .2);
-			TweenMax.staggerTo(bars, 1, {ease: Power3.easeOut, opacity: 1, delay: 2.5}, .2);
-			TweenMax.to("#logo-div1", .8, {ease: Back.easeInOut.config(1), x: -58, delay: 5.75});
-			TweenMax.staggerFrom(["#name-title", "#title-title"], 1, {ease: Power3.easeOut, top: 25, opacity: 0, delay: 4}, .3);
-			TweenMax.from("#top-content", 1.25, {ease: Power3.easeOut, opacity: 0, delay: 4.85});
+			TweenMax.staggerFrom(bars, 1, {ease: Power3.easeOut, top: -15, delay: start + 2.5}, .2);
+			TweenMax.staggerTo(bars, 1, {ease: Power3.easeOut, opacity: 1, delay: start + 2.5}, .2);
+			TweenMax.to("#logo-div1", .8, {ease: Back.easeInOut.config(1), x: -58, delay: start + 5.75});
+			TweenMax.staggerFrom(["#name-title", "#title-title"], 1, {ease: Power3.easeOut, top: 25, opacity: 0, delay: start + 4}, .3);
+			TweenMax.from("#top-content", 1.25, {ease: Power3.easeOut, opacity: 0, delay: start + 4.85});
 
 			// Fade the portrait in last: once the intro has played and the image has
 			// arrived. The logo becomes interactive when that fade ends (or straight
@@ -393,10 +433,30 @@
 				logoPaths[j].addEventListener("mouseenter", function () { endRipple(this); });
 			}
 
+			// Click: push the bar away and let it spring back (see .pressed in CSS).
+			// Restarting the class lets rapid clicks replay the bounce.
+			logo.addEventListener("click", function (e) {
+				var path = e.target;
+				if (!logo.classList.contains("logo-ready") || path.tagName.toLowerCase() !== "path") return;
+				endRipple(path);
+				path.classList.remove("pressed");
+				void path.getBoundingClientRect();
+				path.classList.add("pressed");
+			});
+			for (var k = 0; k < logoPaths.length; k++) {
+				logoPaths[k].addEventListener("animationend", function (e) {
+					if (e.animationName === "press") this.classList.remove("pressed");
+				});
+			}
+
+			// Waves alternate direction: left to right first, then right to left
+			var waveCount = 0;
 			function ripple() {
 				var paths = logoPaths;
+				var reverse = waveCount++ % 2 === 1;
 				for (var i = 0; i < paths.length; i++) {
-					var delay = .3 + i * .12;
+					var step = reverse ? paths.length - 1 - i : i;
+					var delay = .3 + step * .12;
 					// A bar already being hovered keeps its hover state; the wave skips it
 					if (paths[i].matches(":hover")) continue;
 					endRipple(paths[i]);
@@ -414,7 +474,7 @@
 				portraitFailed = true;
 				revealPortrait();
 			});
-			TweenMax.delayedCall(7.2, revealPortrait);
+			TweenMax.delayedCall(start + 7.2, revealPortrait);
 		})();
 	</script>
 </body>
