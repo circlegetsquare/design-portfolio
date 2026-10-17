@@ -381,14 +381,24 @@
 				}, 10000);
 			}
 
+			function endRipple(path) {
+				path.classList.remove("ripple");
+				path.style.animationDelay = "";
+			}
+
+			// Hovering a bar mid-wave hands it straight to its hover state (the
+			// transition picks up from wherever the wave left it)
+			var logoPaths = logo.querySelectorAll("path");
+			for (var j = 0; j < logoPaths.length; j++) {
+				logoPaths[j].addEventListener("mouseenter", function () { endRipple(this); });
+			}
+
 			function ripple() {
-				var paths = logo.querySelectorAll("path");
-				function endRipple(path) {
-					path.classList.remove("ripple");
-					path.style.animationDelay = "";
-				}
+				var paths = logoPaths;
 				for (var i = 0; i < paths.length; i++) {
 					var delay = .3 + i * .12;
+					// A bar already being hovered keeps its hover state; the wave skips it
+					if (paths[i].matches(":hover")) continue;
 					endRipple(paths[i]);
 					void paths[i].getBoundingClientRect(); // restart the animation cleanly
 					paths[i].style.animationDelay = delay + "s";
